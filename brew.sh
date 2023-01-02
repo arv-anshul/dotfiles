@@ -18,14 +18,10 @@ brew install firefox
 brew install vlc
 
 # for coding
-brew install python@3.11
 brew install visual-studio-code
 
 # oh-my-zsh plugins >> others are in curl.sh
 brew install zsh-history-substring-search
-
-# install fonts
-brew install homebrew/cask-fonts/font-cascadia-code 
 
 # print all the packages
 brew list

@@ -1,0 +1,79 @@
+// This file is only used in vs-code.
+// Contains some snippets for python development.
+
+{
+	// gitignore snippets
+	"python.ignore": {
+		"scope": "ignore",
+		"prefix": "py",
+		"body": [
+			".DS_Store",
+			"__pychache__/",
+			".ipynb_checkpoints/",
+			"__rough__.*",
+			"$0"
+		],
+		"description": "A python repo ignore snippet.",
+	},
+	// markdown snippets
+	"readme bash": {
+		"scope": "markdown",
+		"prefix": "bash",
+		"body": [
+			"```${1:bash}",
+			"$2",
+			"```"
+		],
+		"description": "Markdown code displaying template.",
+	},
+	"creator section": {
+		"scope": "markdown",
+		"prefix": "creator",
+		"body": [
+			"## Created by [${1:arv-anshul}](https://github.com/${2:arv-anshul})",
+			"",
+			"$0",
+			"",
+		],
+		"description": "Creator section in README file.",
+	},
+	// python snippets
+	"viz libray": {
+		"scope": "python",
+		"prefix": "import viz",
+		"body": [
+			"from matplotlib import pyplot as plt",
+			"import seaborn as sns"
+		],
+		"description": "Import python's viz libraries."
+	},
+	"eda libray": {
+		"scope": "python",
+		"prefix": "import eda",
+		"body": [
+			"import pandas as pd",
+			"import numpy as np"
+		],
+		"description": "Import python's EDA libraries like pandas and numpy."
+	},
+	"read csv, json file": {
+		"scope": "python",
+		"prefix": "readdf",
+		"body": [
+			"df = pd.${1|read_csv, read_json|}('$2')",
+			"print(df.shape)",
+			"df.head($3)"
+		],
+		"description": "Read csv|json files with pandas library. Most used in second cell of jupyter notebook."
+	},
+	"make function": {
+		"scope": "python",
+		"prefix": "def",
+		"body": [
+			"def ${1:func_name}($2):",
+			"    ${3:pass}",
+			"$0"
+		],
+		"description": "Read csv|json files with pandas library. Most used in second cell of jupyter notebook."
+	},
+}

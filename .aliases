@@ -24,18 +24,12 @@ alias brdoc="brew doctor"
 # Only for jupyter notebook
 alias cdj="cd /Users/iarv/Documents/Code\ Resource/Jupyter\ Notebook"
 alias jn="jupyter notebook"
-alias jtreset="jt -r"
 alias jt-t="jt -fs 100 -tfs 16 -fs 16 -ofs 16 -dfs 16 -cellw 85% -T -f firacode -nf exosans -nfs 16 -N -t"
 alias jtdark="jt -t oceans16 -fs 100 -tfs 16 -fs 16 -ofs 16 -dfs 16 -cellw 85% -T -f firacode -nf exosans -nfs 16 -N"
 alias jtlight="jt -t grade3 -fs 100 -tfs 16 -fs 16 -ofs 16 -dfs 16 -cellw 85% -T -f firacode -nf exosans -nfs 16 -N"
 
 # Flush DNS
 alias flushdns="dscacheutil -flushcache && killall -HUP mDNSResponder"
-
-# only for python3.11
-alias py11="python3.11"
-alias pip11="pip3.11"
-alias pip11ls="pip3.11 list"
 
 ## git aliases
 function gc { git commit -m "$@"; }
