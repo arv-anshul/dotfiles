@@ -50,8 +50,7 @@ alias grf="git reflog";
 alias grh="git reset HEAD~" # last commit
 alias gac="git add . && git commit -a -m "
 alias gsu="git gpush --set-upstream origin "
-alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' 
---abbrev-commit --branches"
+alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --branches"
 
 ## custom functions for git
 gpr() {                       # git pull request

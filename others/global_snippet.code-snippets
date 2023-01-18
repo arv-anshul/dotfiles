@@ -8,10 +8,13 @@
 		"prefix": "py",
 		"body": [
 			".DS_Store",
-			"__pychache__/",
+			"__pycache__/",
 			".ipynb_checkpoints/",
+			".vscode/",
+			"",
+			"# Ignore Directory files",
 			"__rough__.*",
-			"$0"
+			"$0",
 		],
 		"description": "A python repo ignore snippet.",
 	},
@@ -34,28 +37,12 @@
 			"",
 			"$0",
 			"",
+			"## :star2: This repository for future use.",
+			"",
 		],
 		"description": "Creator section in README file.",
 	},
 	// python snippets
-	"viz libray": {
-		"scope": "python",
-		"prefix": "import viz",
-		"body": [
-			"from matplotlib import pyplot as plt",
-			"import seaborn as sns"
-		],
-		"description": "Import python's viz libraries."
-	},
-	"eda libray": {
-		"scope": "python",
-		"prefix": "import eda",
-		"body": [
-			"import pandas as pd",
-			"import numpy as np"
-		],
-		"description": "Import python's EDA libraries like pandas and numpy."
-	},
 	"read csv, json file": {
 		"scope": "python",
 		"prefix": "readdf",
@@ -66,14 +53,39 @@
 		],
 		"description": "Read csv|json files with pandas library. Most used in second cell of jupyter notebook."
 	},
-	"make function": {
+	"make dunder function": {
 		"scope": "python",
-		"prefix": "def",
+		"prefix": ["dunder", "magic", "ddm"],
 		"body": [
-			"def ${1:func_name}($2):",
-			"    ${3:pass}",
-			"$0"
+			"def __${1|add,sub,mul,truediv,floordiv,mod,pow,eq,ne,lt,gt,le,ge|}__(self, ${2:other}: ${3|Self,Self\\|float|}) -> ${4|Self,bool|}:",
+			"    ${0:pass}",
 		],
-		"description": "Read csv|json files with pandas library. Most used in second cell of jupyter notebook."
+		"description": "Define dunder/magic method in a class. Methods like [__add__, __eq__]."
+	},
+	"if __name__ == 'main':": {
+		"scope": "python",
+		"prefix": ["ifname", "if __name__"],
+		"body": [
+			"if __name__ == '__main__':",
+			"    ${0:pass}",
+			""
+		],	
+		"description": "Define dunder/magic method in a class. Methods like [__add__, __eq__]."
+	},
+	"h1 comment": {
+		"scope": "python",
+		"prefix": ["#1"],
+		"body": [
+			"# --- --- $0 --- ---"
+		],
+		"description": "Heading 1 comment."
+	},
+	"h2 comment": {
+		"scope": "python",
+		"prefix": ["#2"],
+		"body": [
+			"# --- $0 ---"
+		],
+		"description": "Heading 2 comment."
 	},
 }
