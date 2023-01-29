@@ -11,12 +11,6 @@ sudo -v
 sudo nvram SystemAudioVolume=" "
 sudo nvram StartupMute=%01
 
-# remove dock animation delay
-defaults write com.apple.dock autohide-delay -float 0.1; killall Dock
-
-# remove dock animation auto-hide delay
-defaults write com.apple.dock autohide-time-modifier -float 0.25; killall Dock
-
 # use TAB KEY on keyboard navigation to move focus between controls
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
@@ -32,6 +26,7 @@ defaults write com.apple.menuextra.battery ShowPercent YES
 defaults write NSGlobalDomain AppleEnableSwipeNavigateWithScrolls -bool true
 defaults -currentHost write NSGlobalDomain com.apple.trackpad.threeFingerHorizSwipeGesture -int 1
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerHorizSwipeGesture -int 1
+defaults -currentHost write NSGlobalDomain com.apple.trackpad.threeFingerTapGesture -int 2
 
 # Increase sound quality for Bluetooth headphones/headsets
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
@@ -85,8 +80,26 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict General -bool true Ope
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
 
+# Reduces automatically hide delay time
+defaults write com.apple.dock autohide-delay -float 0.1
+
+# Remove dock animation auto-hide delay
+defaults write com.apple.dock autohide-time-modifier -float 0.25
+
 # Don't show recently used applications in the Dock
 defaults write com.Apple.Dock show-recents -bool false
+
+# Place the on the Right Side of the Screen
+defaults write com.apple.dock orientation -string "right"
+
+# Enables the dock magnification
+defaults write com.apple.dock magnification -bool true
+
+# Dock magnification size
+defaults write com.apple.dock largesize -int 128
+
+# App minimze to its icons
+defaults write com.apple.dock minimize-to-application -int 1
 
 ###############################################################################
 # Kill affected applications                                                  #
