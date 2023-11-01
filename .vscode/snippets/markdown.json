@@ -1,0 +1,17 @@
+{
+  "raise issues": {
+    "scope": "markdown",
+    "prefix": ["issues"],
+    "body": [
+      "### Issues",
+      "",
+      "If you have any issue or query related to this project you can raise [here](https://github.com/arv-anshul/$1/issues).$0"
+    ],
+    "description": "Snippet for raise issues section."
+  },
+  "github link": {
+    "scope": "markdown",
+    "prefix": ["ghlink"],
+    "body": "https://github.com/arv-anshul"
+  },
+}

@@ -1,0 +1,97 @@
+{
+  "if __name__ == 'main':": {
+    "scope": "python",
+    "prefix": ["ifname"],
+    "body": ["if __name__ == '__main__':", "    ${0:...}", ""]
+  },
+  "1 dashed comment": {
+    "scope": ["python", "json"],
+    "prefix": ["c1"],
+    "body": ["# --- $0 --- #"]
+  },
+  "2 dashed comment": {
+    "scope": "python",
+    "prefix": ["c2"],
+    "body": ["# --- --- $0 --- --- #"]
+  },
+  "n dashed comment": {
+    "scope": "python",
+    "prefix": ["cc"],
+    "body": [
+      "# --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- #$0"
+    ]
+  },
+  "multi-line comment": {
+    "scope": "python",
+    "prefix": ["ccc"],
+    "body": [
+      "# --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- #",
+      "# $1",
+      "# --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- #$0"
+    ]
+  },
+  "streamlit readme": {
+    "scope": "python",
+    "prefix": ["st-readme"],
+    "body": [
+      "\"\"\" README page for ${1:this project}. \"\"\"",
+      "",
+      "from pathlib import Path",
+      "",
+      "import streamlit as st",
+      "",
+      "st.set_page_config('README.md', '📝', 'wide')",
+      "",
+      "README_PATH = Path('README.md')",
+      "",
+      "try:",
+      "    st.markdown(README_PATH.read_text())",
+      "except FileNotFoundError:",
+      "    st.error('README.md file not found.', icon='🔥')",
+      "$0"
+    ]
+  },
+  "import streamlit": {
+    "scope": "python",
+    "prefix": ["strealit"],
+    "body": [
+      "import streamlit as st",
+      "$0",
+      "",
+      "st.set_page_config('${TM_FILENAME_BASE/[_]/ /g}', '😃', 'wide', 'expanded')"
+    ],
+    "description": "Streamlit readme page."
+  },
+  "read dataframe": {
+    "scope": "python",
+    "prefix": ["readf"],
+    "body": [
+      "${3:df} = pd.${1:read_csv}('$2')",
+      "print(${3:df}.shape)",
+      "${3:df}.head()$0"
+    ],
+    "description": "Import CSV file as DataFrame."
+  },
+  "print dataframe": {
+    "scope": "python",
+    "prefix": ["prdf"],
+    "body": ["print(${1:df}.shape)", "${1:df}.${2:head}($3)$0"]
+  },
+  "ds-import": {
+    "scope": "python",
+    "prefix": ["pdnp"],
+    "body": [
+      "import numpy as np",
+      "import pandas as pd",
+      "import seaborn as sns",
+      "from matplotlib import pyplot as plt"
+    ],
+    "description": "Import basic data science libraries."
+  },
+  "train_test_split": {
+    "scope": "python",
+    "prefix": "train_test_split",
+    "body": "X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)$0",
+    "description": "Write train_test_split line at once."
+  }
+}
