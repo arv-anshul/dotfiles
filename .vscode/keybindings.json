@@ -1,0 +1,48 @@
+[
+  // === === === === === === === === === === === === === === === === === === //
+  // Editor Shortcuts
+  // === === === === === === === === === === === === === === === === === === //
+  {
+    "command": "editor.action.copyLinesDownAction",
+    "key": "alt+d",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "command": "-editor.action.copyLinesDownAction",
+    "key": "shift+alt+down",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "command": "workbench.action.openSettingsJson",
+    "key": "alt+cmd+j"
+  },
+  {
+    "command": "workbench.view.scm",
+    "key": "ctrl+cmd+g",
+    "when": "workbench.scm.active"
+  },
+  {
+    "command": "-workbench.view.scm",
+    "key": "ctrl+shift+g",
+    "when": "workbench.scm.active"
+  },
+  // === === === === === === === === === === === === === === === === === === //
+  // Python Shortcuts
+  // === === === === === === === === === === === === === === === === === === //
+  {
+    "command": "python.execInTerminal-icon",
+    "key": "cmd+r"
+  },
+  // === === === === === === === === === === === === === === === === === === //
+  // Extension Shortcuts
+  // === === === === === === === === === === === === === === === === === === //
+  // Project Manager
+  {
+    "command": "projectManager.listProjects",
+    "key": "ctrl+cmd+p"
+  },
+  {
+    "command": "-projectManager.listProjects",
+    "key": "alt+cmd+p"
+  }
+]
