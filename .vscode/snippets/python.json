@@ -21,7 +21,7 @@
       "# --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- #$0"
     ]
   },
-  "multi-line comment": {
+  "multiline comment": {
     "scope": "python",
     "prefix": ["ccc"],
     "body": [
@@ -53,12 +53,12 @@
   },
   "import streamlit": {
     "scope": "python",
-    "prefix": ["strealit"],
+    "prefix": ["stm"],
     "body": [
       "import streamlit as st",
       "$0",
       "",
-      "st.set_page_config('${TM_FILENAME_BASE/[_]/ /g}', '😃', 'wide', 'expanded')"
+      "st.set_page_config(\"${TM_FILENAME_BASE/[_]/ /g}\", \"😃\", \"wide\", \"expanded\")"
     ],
     "description": "Streamlit readme page."
   },
@@ -75,7 +75,7 @@
   "print dataframe": {
     "scope": "python",
     "prefix": ["prdf"],
-    "body": ["print(${1:df}.shape)", "${1:df}.${2:head}($3)$0"]
+    "body": ["print(${1:df}.shape)", "${1:df}.head()$0"]
   },
   "ds-import": {
     "scope": "python",
@@ -93,5 +93,25 @@
     "prefix": "train_test_split",
     "body": "X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)$0",
     "description": "Write train_test_split line at once."
+  },
+  "Optional[]": {
+    "scope": "python",
+    "prefix": ["opt"],
+    "body": "Optional[$TM_SELECTED_TEXT]${1: = None}"
+  },
+  "type | None": {
+    "scope": "python",
+    "prefix": ["nne"],
+    "body": "$TM_SELECTED_TEXT | None${1: = None}"
+  },
+  "print": {
+    "scope": "python",
+    "prefix": ["prt"],
+    "body": "print($TM_SELECTED_TEXT)"
+  },
+  "from module import constants as C": {
+    "scope": "python",
+    "prefix": ["imc"],
+    "body": "from ${1:module} import constants as C"
   }
 }

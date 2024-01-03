@@ -12,7 +12,9 @@
       ".venv/",
       ".vscode/",
       "*__rough__*.*",
+      "*.arv",
       "*.arv.*",
+      "arv.*",
       "logs/",
       "",
       "# --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- #",
@@ -23,11 +25,6 @@
   "RoughIgnore": {
     "scope": "ignore",
     "prefix": "rough",
-    "body": ["*__rough__*.*", "*.arv.*"]
-  },
-  "BasicIgnore": {
-    "scope": "ignore",
-    "prefix": "basic",
-    "body": [".DS_Store", ".vscode/", "*__rough__*.*", "*.arv.*"]
+    "body": ["*__rough__*.*", "*.arv", "arv.*", "*.arv.*"]
   }
 }
