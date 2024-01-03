@@ -47,33 +47,23 @@ help:
 	@$(PYTHON) -c "$$PRINT_HELP_PYSCRIPT" < $(MAKEFILE_LIST)
 
 
-# ---------------------------------- cURL Commands ---------------------------------- #
-.PHONY: curl
+# ----------------------- Install Basic Requirements Commands ----------------------- #
+.PHONY: all
 
-curl: curl-brew curl-ohmyzsh  ## Install important commands like brew, oh-my-zsh,
+all: brew ohmyzsh  ## Install important commands like brew, oh-my-zsh,
 
-curl-brew:  ## Install homebrew using curl
-	echo "################ Installing Homebrew ################"
+brew:  ## Install homebrew using curl
+	echo Installing Homebrew
 	/bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 	# Add HOMEBREW >> opt/hombrew/bin in the PATH.
 	echo 'eval $$(/opt/homebrew/bin/brew shellenv)' >> $${HOME}/.zprofile
 	eval $$(/opt/homebrew/bin/brew shellenv)
 
-curl-ohmyzsh:  ## Install oh-my-zsh for terminal
+ohmyzsh:  ## Install oh-my-zsh for terminal
 	sh -c "$$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # --------------------------- Install Packages & Commands --------------------------- #
-
-brew: curl  ## Install important packages using brew (first specify them in Makefile)
-	@echo "Specify your packages to install them with Homebrew"
-	brew install tree
-
-	# brew install spotify
-	# brew install cold-turkey-blocker
-	# brew install vlc
-	brew install visual-studio-code
-	# brew install rectangle
 
 zsh-plugins:  ## Install oh-my-zsh plugins
 	brew install zsh-history-substring-search
