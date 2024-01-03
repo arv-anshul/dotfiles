@@ -1,9 +1,57 @@
-/* === === === === === == DEFAULT - VSCODE PROFILE == === === === === === */
 {
-  // === === === === === === === === === === === === === === === === === === //
-  // Theme Customization
-  // === === === === === === === === === === === === === === === === === === //
-  // /*
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[json]": {
+    "editor.stickyScroll.enabled": true,
+    "editor.stickyScroll.maxLineCount": 10,
+    "editor.wordWrap": "on"
+  },
+  "[markdown]": {
+    "editor.fontFamily": "Monaspace Argon, Monaspace Radon, Menlo",
+    "editor.quickSuggestions": {
+      "other": "on"
+    },
+    "editor.stickyScroll.enabled": true
+  },
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  "[yaml]": {
+    "editor.wordWrap": "on"
+  },
+  "breadcrumbs.enabled": false,
+  "cSpell.allowCompoundWords": true,
+  "cSpell.enableFiletypes": ["toml"],
+  "cSpell.ignorePaths": ["*.json", "*.csv", "*.ipynb"],
+  "cSpell.minWordLength": 5,
+  "cSpell.userWords": [],
+  "debug.terminal.clearBeforeReusing": true,
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.accessibilitySupport": "off",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontFamily": "Menlo, Monaspace Argon, Consolas, Operator Mono Lig, JetBrains Mono, Monaspace Neon, Monaspace Radon",
+  "editor.fontLigatures": "'calt', 'liga', 'dlig', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08'",
+  "editor.fontSize": 14,
+  "editor.formatOnSave": true,
+  "editor.guides.bracketPairs": true,
+  "editor.letterSpacing": 0.7,
+  "editor.lineHeight": 2,
+  "editor.minimap.autohide": true,
+  "editor.minimap.enabled": false,
+  "editor.minimap.renderCharacters": false,
+  "editor.minimap.showSlider": "always",
+  "editor.mouseWheelZoom": true,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.renderWhitespace": "all",
+  "editor.rulers": [88, 100],
+  "editor.semanticHighlighting.enabled": true,
+  "editor.snippetSuggestions": "inline",
   "editor.tokenColorCustomizations": {
     "textMateRules": [
       {
@@ -38,7 +86,6 @@
         "scope": [
           "constant.numeric.css",
           "constant.numeric.decimal.js",
-          "constant.numeric",
           "invalid",
           "keyword.mysql",
           "keyword.operator",
@@ -61,92 +108,36 @@
       }
     ]
   },
-  // */
-  "editor.rulers": [80, 88, 100],
-  "workbench.colorCustomizations": {
-    "editorRuler.foreground": "#6663",
-    "statusBar.background": "#1e1e1e",
-    "tab.activeBackground": "#113",
-    "terminal.selectionBackground": "#a04400"
+  "emojisense.languages": {
+    "*": true
   },
-  // === === === === === === === === === === === === === === === === === === //
-  // Basic Configs: Fonts, Editor, Terminal
-  // === === === === === === === === === === === === === === === === === === //
-  "breadcrumbs.enabled": false,
-  "debug.terminal.clearBeforeReusing": true,
-  "diffEditor.hideUnchangedRegions.enabled": true,
-  "diffEditor.ignoreTrimWhitespace": false,
-  "editor.accessibilitySupport": "off",
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.fontFamily": "Menlo, JetBrains Mono, Consolas, Operator Mono Lig, MonoLisa",
-  "editor.fontLigatures": true,
-  "editor.fontSize": 14,
-  "editor.formatOnSave": true,
-  "editor.guides.bracketPairs": true,
-  "editor.lineHeight": 1.7,
-  "editor.minimap.autohide": true,
-  "editor.minimap.enabled": false,
-  "editor.minimap.renderCharacters": false,
-  "editor.minimap.showSlider": "always",
-  "editor.mouseWheelZoom": true,
-  "editor.multiCursorModifier": "ctrlCmd",
-  "editor.renderWhitespace": "all",
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "extensions.autoUpdate": false,
   "extensions.ignoreRecommendations": true,
-  "security.workspace.trust.untrustedFiles": "open",
-  "telemetry.telemetryLevel": "off",
-  "terminal.integrated.fontFamily": "JetBrains Mono, Operator Mono Lig, Menlo",
-  "update.mode": "manual",
-  "window.commandCenter": false,
-  "workbench.iconTheme": "mosmmy-icons-vscode",
-  "workbench.layoutControl.enabled": false,
-  "workbench.productIconTheme": "material-product-icons",
-  "workbench.sideBar.location": "right",
-  "workbench.startupEditor": "none",
-  "zenMode.hideLineNumbers": false,
-  "zenMode.hideStatusBar": false,
-  "zenMode.hideTabs": false,
-  "editor.codeActionsOnSave": {
-    "source.organizeImports": true
-  },
-  // === === === === === === === === === === === === === === === === === === //
-  // Language specific settings
-  // === === === === === === === === === === === === === === === === === === //
-  // Python
-  "editor.semanticHighlighting.enabled": true,
-  "editor.snippetSuggestions": "inline",
-  "files.refactoring.autoSave": true,
-  "python.analysis.autoFormatStrings": true,
-  "python.analysis.autoImportCompletions": true,
-  "python.analysis.autoSearchPaths": true,
-  "python.analysis.completeFunctionParens": true,
-  "python.analysis.typeCheckingMode": "basic",
-  "python.languageServer": "Pylance",
-  "search.useIgnoreFiles": true,
-  "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter"
+  "files.associations": {
+    "*.env": "properties",
+    "*.toml": "toml"
   },
   "files.exclude": {
-    "**/__pycache__": true,
-    "**/.ipynb_checkpoints": true
+    "**/.ipynb_checkpoints": true,
+    "**/__pycache__": true
   },
-  "flake8.args": [
-    "--max-line-length",
-    "88",
-    "--exclude",
-    "__init__.py",
-    "--ignore",
-    "E501,W503,E203"
-  ],
-  "isort.args": ["--profile", "black"],
-  // Jupyter Notebook
+  "files.refactoring.autoSave": true,
   "jupyter.askForKernelRestart": false,
   "jupyter.interactiveWindow.textEditor.executeSelection": true,
   "jupyter.notebookFileRoot": "${workspaceFolder}",
   "jupyter.themeMatplotlibPlots": true,
+  "markdown.updateLinksOnFileMove.enabled": "always",
+  "markdown.validate.enabled": true,
+  "notebook.cellToolbarLocation": {
+    "default": "left"
+  },
   "notebook.cellToolbarVisibility": "hover",
+  "notebook.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
+  },
   "notebook.diff.ignoreMetadata": true,
   "notebook.diff.ignoreOutputs": true,
   "notebook.formatOnCellExecution": true,
@@ -159,57 +150,43 @@
   "notebook.output.wordWrap": true,
   "notebook.showCellStatusBar": "visibleAfterExecute",
   "notebook.stickyScroll.enabled": true,
-  "notebook.cellToolbarLocation": {
-    "default": "left"
+  "projectManager.git.baseFolders": [
+    "/Users/iarv/Documents/iCodes",
+    "/Users/iarv/Documents/OBSIDIAN",
+    "/Users/iarv/This PC"
+  ],
+  "python.analysis.autoFormatStrings": true,
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.autoSearchPaths": true,
+  "python.analysis.completeFunctionParens": true,
+  "python.analysis.typeCheckingMode": "basic",
+  "python.languageServer": "Pylance",
+  "ruff.lint.args": ["--config=~/Developer/pyproject.toml"],
+  "ruff.lint.run": "onSave",
+  "search.useIgnoreFiles": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "telemetry.telemetryLevel": "off",
+  "terminal.integrated.fontFamily": "Monaspace Radon, Operator Mono Lig, JetBrains Mono, Menlo",
+  "terminal.integrated.fontSize": 12,
+  "testing.automaticallyOpenPeekView": "never",
+  "update.mode": "manual",
+  "window.commandCenter": false,
+  "window.zoomLevel": 1.5,
+  "workbench.activityBar.location": "hidden",
+  "workbench.colorCustomizations": {
+    "editorRuler.foreground": "#6663",
+    "statusBar.background": "#1e1e1e",
+    "tab.activeBackground": "#113",
+    "terminal.selectionBackground": "#a04400"
   },
+  "workbench.editor.labelFormat": "medium",
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook"
   },
-  // Markdown
-  "markdown.validate.enabled": true,
-  "markdown.updateLinksOnFileMove.enabled": "always",
-  "[markdown]": {
-    "editor.quickSuggestions": {
-      "comments": "off",
-      "strings": "off",
-      "other": "on"
-    }
-  },
-  // JSON
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.stickyScroll.enabled": true,
-    "editor.wordWrap": "on"
-  },
-  // YAML
-  "[yaml]": {
-    "editor.wordWrap": "on"
-  },
-  // HTML
-  "[html]": {
-    "editor.defaultFormatter": "vscode.html-language-features"
-  },
-  // === === === === === === === === === === === === === === === === === === //
-  // Installed Extensions Settings
-  // === === === === === === === === === === === === === === === === === === //
-  // Spell Checker
-  "cSpell.userWords": [],
-  "cSpell.ignorePaths": ["*.json", "*.csv", "*.ipynb"],
-  "cSpell.minWordLength": 5,
-  // Emojisense
-  "emojisense.languages": {
-    "*": true
-  },
-  // Project Manager
-  "projectManager.git.baseFolders": [],
-  // === === === === === === === === === === === === === === === === === === //
-  // Themes Collections
-  // === === === === === === === === === === === === === === === === === === //
-  // "editor.themeCollections": "Darkly Theme - Ayush Lal, nightfall",
-  // "editor.fileIconThemes": "mosmmy-icons-vscode",
-  // === === === === === === === === === === === === === === === === === === //
-  // Recent Settings
-  // === === === === === === === === === === === === === === === === === === //
-  "workbench.activityBar.visible": false,
-  "window.zoomLevel": 1.2
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.layoutControl.enabled": false,
+  "workbench.productIconTheme": "material-product-icons",
+  "workbench.sideBar.location": "right",
+  "workbench.startupEditor": "none",
+  "zenMode.hideLineNumbers": false
 }
