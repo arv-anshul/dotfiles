@@ -8,14 +8,17 @@ if [ -n $HOME/.oh-my-zsh ]; then
 fi
 
 ############################ CUSTOM ALIAS #############################
-alias codezsh="code ~/.zshrc"
-alias upzsh='source ~/.zshrc'
+alias zshc="code ~/.zshrc"
+alias zshs='source ~/.zshrc'
 alias cls="clear"
+alias zz="clear"
+alias xx="clear"
 alias zx="exit"
-alias bcdn="cd ~/Documents/OBSIDIAN"
 alias obsidian="cd ~/Documents/OBSIDIAN"
-alias Codes="cd ~/Documents/Codes"
-alias vsc="code ."
+alias iCodes="cd ~/Documents/iCodes"
+alias Codes="cd ~/This\ PC/Codes-Local"
+alias dmake="make -f ~/Developer/Makefile"
+alias dk="docker"
 
 ## git aliases
 alias g="git"
@@ -46,17 +49,19 @@ alias gra="git remote add"
 ############################ Alias for Python #############################
 alias py="python3"
 
-alias pipls="pip list"
-alias pipgr="pip freeze | grep"
-alias pipfr="pip freeze > requirements.txt"
-alias pipir="pip install -r requirements.txt"
-alias pipi="pip install"
-alias pipun="pip uninstall"
+alias pyi="pip install -U"
+alias pyun="pip uninstall"
+alias pyls="pip list"
+alias pygr="pip freeze | grep"
+alias pyir="pip install -r requirements.txt"
+alias pyun-all="pip freeze | xargs pip uninstall -y -q"
 
-function py-clean() {
+function pycls() {
   find . -type d -name ".ipynb_checkpoints" -exec rm -rf {} \; 2>/dev/null
   find . -type d -name "__pycache__" -exec rm -rf {} \; 2>/dev/null
   find . -type f -name "*.pyc" -exec rm -f {} \; 2>/dev/null
+  find . -name '.DS_Store' -type f -delete
+  find . -type d -name ".ruff_cache" -exec rm -rf {} \; 2>/dev/null
 }
 
 # --- --- --- --- --- --- --- --- --- --- --- --- --- --- #
@@ -88,7 +93,8 @@ function py-venv() {
   local name="${1:-".venv"}"
   local venvpath="${name:P}"
 
-  python3 -m venv "${name}" || return
+  # python3 -m venv "${name}" || return
+  virtualenv "${name}"
   echo >&2 "Created venv in '${venvpath}'"
   vrun "${name}"
 }
@@ -97,4 +103,4 @@ function py-venv() {
 ############################ CUSTOMIZATION #############################
 # HOMEBREW
 export HOMEBREW_NO_AUTO_UPDATE=1
-export PATH=/opt/homebrew/bin:/Library/Frameworks/Python.framework/Versions/3.11/bin:/Users/iarv/Library/Python/3.9/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/mysql/bin
+export PATH=/opt/homebrew/bin:/Library/Frameworks/Python.framework/Versions/3.11/bin:$HOME/Library/Python/3.9/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
