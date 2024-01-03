@@ -1,41 +1,25 @@
 ############################ CUSTOM ALIAS by arv-anshul #############################
 # other aliases
 alias zshrc="code ~./zshrc"
-alias deleteDSFiles="find . -name '.DS_Store' -type f -delete"
-alias topten="history | commands | sort -rn | head"
 alias myip="curl http://ipecho.net/plain; echo"
-alias dirs='dirs -v | head -10'
 alias usage='du -h -d1'
-alias update="source ~/.zshrc"
-alias sshdir="cd ~/.ssh"
-alias runp="lsof -i "
-alias md="mkdir "
+alias zshs="source ~/.zshrc"
 alias ..='cd ..'
 alias ...='cd ../..'
 alias cls="clear"
 alias zx="exit"
 
-# brew
-alias bri="brew install"
-alias bru="brew uninstall"
-alias brupdate="brew update"
-alias brdoc="brew doctor"
-
 # Only for jupyter notebook
-alias cdj="cd /Users/iarv/Documents/Code\ Resource/Jupyter\ Notebook"
 alias jn="jupyter notebook"
 alias jt-t="jt -fs 100 -tfs 16 -fs 16 -ofs 16 -dfs 16 -cellw 85% -T -f firacode -nf exosans -nfs 16 -N -t"
 alias jtdark="jt -t oceans16 -fs 100 -tfs 16 -fs 16 -ofs 16 -dfs 16 -cellw 85% -T -f firacode -nf exosans -nfs 16 -N"
 alias jtlight="jt -t grade3 -fs 100 -tfs 16 -fs 16 -ofs 16 -dfs 16 -cellw 85% -T -f firacode -nf exosans -nfs 16 -N"
 
-# Flush DNS
-alias flushdns="dscacheutil -flushcache && killall -HUP mDNSResponder"
-
 ## git aliases
 function gc { git commit -m "$@"; }
 alias gcm="git checkout master";
 alias gs="git status";
-alias ga="git add .";
+alias ga="git add";
 alias gb="git branch";
 alias gpull="git pull";
 alias gf="git fetch";
@@ -49,21 +33,5 @@ alias gbn="git checkout -B "
 alias grf="git reflog";
 alias grh="git reset HEAD~" # last commit
 alias gac="git add . && git commit -a -m "
-alias gsu="git gpush --set-upstream origin "
+alias gsu="git push --set-upstream origin "
 alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --branches"
-
-## custom functions for git
-gpr() {                       # git pull request
-  if [ $? -eq 0 ]; then
-    github_url=`git remote -v | awk '/fetch/{print $2}' | sed -Ee 's#(git@|git://)#http://#' -e 's@com:@com/@' -e 's%\.git$%%'`;
-    branch_name=`git symbolic-ref HEAD 2>/dev/null | cut -d"/" -f 3`;
-    pr_url=$github_url"/compare/master..."$branch_name
-    open $pr_url;
-  else
-    echo 'failed to open a pull request.';
-  fi
-}
-
-commands() {
-  awk '{a[$2]++}END{for(i in a){print a[i] " " i}}'
-}
