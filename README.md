@@ -1,61 +1,58 @@
-# dotfiles <sub><sup>**_[by arv-anshul](https://www.github.com/arv-anshul)_**</sup></sub>
+# dotfiles
 
 ## Table of Contents
 
-- [Prerequisites](#prerequisites)
-- [Steps to use this repository](#clone-the-repository-in-your-mac)
-- [Importatnt Apps](#important-apps)
-- [Other files Importance](#other-files-importance)
-- [Microsoft Office - Package 2019](#microsoft-office---package-2019)
-- [Personal Fonts](#personal-fonts)
+- [How to use](#how-to-use)
+  - [Install Git](#install-git)
+  - [Using Makefile](#using-makefile)
+  - [Using Bash Scripts](#using-bash-scripts)
+- [Microsoft Office Crack](#microsoft-office-crack)
+- [Useful Fonts](#useful-fonts)
 
-## Prerequisites
+## How To Use
 
-1. Spotify <sub><sup>**_To Install SPOT-X otherwise shows error_**</sup></sub>
+### Install Git
 
-## Clone the Repository in your mac
+- See instructions to install Git by visiting the official [Git website](https://git-scm.com/download/mac).
+- Clone this repo using `git` command:
+  ```bash
+  git clone https://github.com/arv-anshul/dotfiles
+  ```
 
-If you want custom installation do it by runing single file with your customizations. Then, `run install.sh` file with:
+> [!WARNING]
+>
+> **Only for Author.**
+>
+> Copy `.gitconfig` to `$HOME` directory to configure git for your GitHub account.
+>
+> ```bash
+> mv ./.gitconfig ~/.gitconfig
+> ```
 
-```bash
-chmod +x ./install.sh
-./install.sh
-######### ==> OR <== ###########
-source install.sh
-```
+### Using Makefile
 
-## Important Apps
+- List all **`make`** commands using `make` or `make help`.
+- Then, run only required one in your system to install specific package.
 
-- Franz <sub><sup>**_For all messaging apps in one app_**</sup></sub>
-- Spotify
-- Cold Turkey Blocker
-- Clean My Mac X <sub><sup>**_From iCloud_**</sup></sub>
-- Visual Studio Code
-- VLC
-- [Microsoft Office Package](#microsoft-office---package-2019)
-- NetWorker Lite
-- AdGuard for Safari
+### Using Bash Scripts
 
-## Other files Importance
+- You can also **use bash scripts** to install packages in your system.
+- First you have to make them executable using `chmod -x path/to/script.sh` and then you can run it by just refering it in terminal like `./path/to/script.sh`.
 
-### Do the same with other files.
+> [!IMPORTANT]
+>
+> **Importnat Note for Author**
+>
+> Try use Homebrew (`brew`) to install Apps and packages in your system. Install `python`, `docker`, `visual-studio-code`, `arc`, `vlc` **and more using Homebrew**.
 
-### _.zshrc_
-
-After all installing `oh-my-zsh` and `required plugins` you need to `replace .zshrc file` to `$HOME` directory.
-
-### _arv-tui.terminal_
-
-If you want custom terminal theme as mine. Just import [`arv-tui.terminal`](others/arv-tui.terminal) file from terminal `Preferences > Profile`.
-
-## Microsoft Office - Package 2019
+## Microsoft Office Crack
 
 Download & Install [`serializer`](https://gist.github.com/zthxxx/9ddc171d00df98cbf8b4b0d8469ce90a) and `MS Office 2019` from github gist.
 
-## Personal Fonts
+## Useful Fonts
 
-1. [JetBrains Mono](Fonts)
-2. [Operator Mono Lig](https://github.com/willfore/vscode_operator_mono_lig.git)
-3. [Consolas](Fonts)
-4. [Poppins](Fonts) an awesome sans font.
+1. `JetBrains Mono` awesome coding font. _Download from [Google Fonts](https://fonts.google.com/specimen/JetBrains+Mono)_.
+2. `Operator Mono Lig` another awesome coding font. _Download from [@willfore](https://github.com/willfore/vscode_operator_mono_lig.git)_.
+3. `Consolas` integrated in Windows. _Download from any GitHub_.
+4. `Poppins` an awesome sans font. _Download from [Google Fonts](https://fonts.google.com/specimen/Poppins)_.
 5. `Menlo`: Already integrated with MacOS.
