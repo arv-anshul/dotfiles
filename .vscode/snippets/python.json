@@ -1,36 +1,91 @@
 {
-  "if __name__ == 'main':": {
-    "scope": "python",
-    "prefix": "ifname",
-    "body": ["if __name__ == '__main__':", "    ${0:...}", ""]
-  },
   "1 dashed comment": {
-    "scope": "python",
+    "body": "# --- $0 --- #",
     "prefix": "c1",
-    "body": "# --- $0 --- #"
+    "scope": "python"
   },
   "2 dashed comment": {
-    "scope": "python",
+    "body": "# --- --- $0 --- --- #",
     "prefix": "c2",
-    "body": "# --- --- $0 --- --- #"
+    "scope": "python"
   },
-  "n dashed comment": {
-    "scope": "python",
-    "prefix": "cc",
-    "body": "# --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- #$0"
+  "ds-import": {
+    "body": [
+      "import numpy as np",
+      "import pandas as pd",
+      "import seaborn as sns",
+      "from matplotlib import pyplot as plt"
+    ],
+    "description": "Import basic data science libraries.",
+    "prefix": "pdnp",
+    "scope": "python"
+  },
+  "from __future__ import annotations": {
+    "body": "from __future__ import annotations",
+    "prefix": "__future__",
+    "scope": "python"
+  },
+  "from module import constants as C": {
+    "body": "from ${1:module} import constants as C",
+    "prefix": "imc",
+    "scope": "python"
+  },
+  "if __name__ == 'main':": {
+    "body": ["if __name__ == '__main__':", "    ${0:...}", ""],
+    "prefix": "ifname",
+    "scope": "python"
+  },
+  "import streamlit": {
+    "body": [
+      "import streamlit as st",
+      "$0",
+      "",
+      "st.set_page_config(\"${TM_FILENAME_BASE/[_]/ /g}\", \"😃\", \"wide\", \"expanded\")"
+    ],
+    "description": "Streamlit readme page.",
+    "prefix": "stm",
+    "scope": "python"
   },
   "multiline comment": {
-    "scope": "python",
-    "prefix": "ccc",
     "body": [
       "# --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- #",
       "# $1",
       "# --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- #$0"
-    ]
+    ],
+    "prefix": "ccc",
+    "scope": "python"
+  },
+  "n dashed comment": {
+    "body": "# --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- #$0",
+    "prefix": "cc",
+    "scope": "python"
+  },
+  "Optional[]": {
+    "body": "Optional[$TM_SELECTED_TEXT]${1: = None}",
+    "prefix": "opt",
+    "scope": "python"
+  },
+  "print": {
+    "body": "print($TM_SELECTED_TEXT)",
+    "prefix": "prt",
+    "scope": "python"
+  },
+  "print dataframe": {
+    "body": ["print(${1:df}.shape)", "${1:df}.head()$0"],
+    "prefix": "prdf",
+    "scope": "python"
+  },
+  "read dataframe": {
+    "body": [
+      "${3:df} = pd.${1:read_csv}('$2')",
+      "print(${3:df}.shape)",
+      "${3:df}.head()$0"
+    ],
+    "description": "Import CSV file as DataFrame.",
+    "prefix": "readf",
+    "scope": "python"
   },
   "streamlit readme": {
-    "scope": "python",
-    "prefix": "st-readme",
     "body": [
       "\"\"\" README page for ${1:this project}. \"\"\"",
       "",
@@ -47,74 +102,19 @@
       "except FileNotFoundError:",
       "    st.error('README.md file not found.', icon='🔥')",
       "$0"
-    ]
-  },
-  "import streamlit": {
-    "scope": "python",
-    "prefix": "stm",
-    "body": [
-      "import streamlit as st",
-      "$0",
-      "",
-      "st.set_page_config(\"${TM_FILENAME_BASE/[_]/ /g}\", \"😃\", \"wide\", \"expanded\")"
     ],
-    "description": "Streamlit readme page."
-  },
-  "read dataframe": {
-    "scope": "python",
-    "prefix": "readf",
-    "body": [
-      "${3:df} = pd.${1:read_csv}('$2')",
-      "print(${3:df}.shape)",
-      "${3:df}.head()$0"
-    ],
-    "description": "Import CSV file as DataFrame."
-  },
-  "print dataframe": {
-    "scope": "python",
-    "prefix": "prdf",
-    "body": ["print(${1:df}.shape)", "${1:df}.head()$0"]
-  },
-  "ds-import": {
-    "scope": "python",
-    "prefix": "pdnp",
-    "body": [
-      "import numpy as np",
-      "import pandas as pd",
-      "import seaborn as sns",
-      "from matplotlib import pyplot as plt"
-    ],
-    "description": "Import basic data science libraries."
+    "prefix": "st-readme",
+    "scope": "python"
   },
   "train_test_split": {
-    "scope": "python",
-    "prefix": "train_test_split",
     "body": "X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)$0",
-    "description": "Write train_test_split line at once."
-  },
-  "Optional[]": {
-    "scope": "python",
-    "prefix": "opt",
-    "body": "Optional[$TM_SELECTED_TEXT]${1: = None}"
+    "description": "Write train_test_split line at once.",
+    "prefix": "train_test_split",
+    "scope": "python"
   },
   "type | None": {
-    "scope": "python",
+    "body": "$TM_SELECTED_TEXT | None${1: = None}",
     "prefix": "nne",
-    "body": "$TM_SELECTED_TEXT | None${1: = None}"
-  },
-  "print": {
-    "scope": "python",
-    "prefix": "prt",
-    "body": "print($TM_SELECTED_TEXT)"
-  },
-  "from module import constants as C": {
-    "scope": "python",
-    "prefix": "imc",
-    "body": "from ${1:module} import constants as C"
-  },
-  "from __future__ import annotations": {
-    "scope": "python",
-    "prefix": "__future__",
-    "body": "from __future__ import annotations"
+    "scope": "python"
   }
 }

@@ -1,32 +1,5 @@
 {
-  "raise issues": {
-    "scope": "markdown",
-    "prefix": ["issues"],
-    "body": [
-      "### Issues",
-      "",
-      "If you have any issue or query related to this project you can raise [here](https://github.com/arv-anshul/$1/issues).$0"
-    ],
-    "description": "Snippet for raise issues section."
-  },
-  "github link": {
-    "scope": "markdown",
-    "prefix": ["gha"],
-    "body": "https://github.com/arv-anshul"
-  },
-  "html tag": {
-    "scope": "markdown",
-    "prefix": ["ptag"],
-    "body": ["<${1:p}${2}>$0</${1:p}>"]
-  },
-  "img tag": {
-    "scope": "markdown",
-    "prefix": ["img"],
-    "body": ["<img src=\"${1:https://}\" ${2|width,height|}=\"${3:40}px\">"]
-  },
   "dropdown section": {
-    "scope": "markdown",
-    "prefix": ["details"],
     "body": [
       "<details>",
       "<summary>${1:summary}</summary>",
@@ -34,11 +7,26 @@
       "$0",
       "",
       "</details>"
-    ]
+    ],
+    "prefix": ["details"],
+    "scope": "markdown"
+  },
+  "github link": {
+    "body": "https://github.com/arv-anshul",
+    "prefix": ["gha"],
+    "scope": "markdown"
+  },
+  "html tag": {
+    "body": ["<${1:p}${2}>$0</${1:p}>"],
+    "prefix": ["ptag"],
+    "scope": "markdown"
+  },
+  "img tag": {
+    "body": ["<img src=\"${1:https://}\" ${2|width,height|}=\"${3:40}px\">"],
+    "prefix": ["img"],
+    "scope": "markdown"
   },
   "md file properties": {
-    "scope": "markdown",
-    "prefix": ["ppp"],
     "body": [
       "---",
       "tags: ",
@@ -47,6 +35,18 @@
       "description: ${2:\"Describe the file contents.\"}",
       "---",
       ""
-    ]
+    ],
+    "prefix": ["ppp"],
+    "scope": "markdown"
+  },
+  "raise issues": {
+    "body": [
+      "### Issues",
+      "",
+      "If you have any issue or query related to this project you can raise [here](https://github.com/arv-anshul/$1/issues).$0"
+    ],
+    "description": "Snippet for raise issues section.",
+    "prefix": ["issues"],
+    "scope": "markdown"
   }
 }

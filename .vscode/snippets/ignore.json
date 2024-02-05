@@ -1,7 +1,10 @@
 {
+  ".dockerignore": {
+    "body": ["docker-compose.yml", "Dockerfile", ".docker"],
+    "prefix": "docker",
+    "scope": "ignore"
+  },
   ".gitignore": {
-    "scope": "ignore",
-    "prefix": "py",
     "body": [
       "# Custom arv-anshul ignore snippet",
       "__pycache__/",
@@ -19,22 +22,19 @@
       "arv.*",
       ""
     ],
-    "description": "A python repo gitignore snippet."
-  },
-  "RoughIgnore": {
-    "scope": "ignore",
-    "prefix": "rough",
-    "body": ["*__rough__*.*", "*.arv", "arv.*", "*.arv.*"]
+    "description": "A python repo gitignore snippet.",
+    "prefix": "py",
+    "scope": "ignore"
   },
   "Extra Ignore": {
-    "scope": "ignore",
-    "prefix": "extra",
     "body": ["data/", "logs/"],
-    "description": "Extra ignore for a common python project."
+    "description": "Extra ignore for a common python project.",
+    "prefix": "extra",
+    "scope": "ignore"
   },
-  ".dockerignore": {
-    "scope": "ignore",
-    "prefix": "docker",
-    "body": ["docker-compose.yml", "Dockerfile", ".docker"]
+  "RoughIgnore": {
+    "body": ["*__rough__*.*", "*.arv", "arv.*", "*.arv.*"],
+    "prefix": "rough",
+    "scope": "ignore"
   }
 }
