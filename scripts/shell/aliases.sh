@@ -1,37 +1,75 @@
-############################ CUSTOM ALIAS by arv-anshul #############################
-# other aliases
-alias zshrc="code ~./zshrc"
-alias myip="curl http://ipecho.net/plain; echo"
-alias usage='du -h -d1'
-alias zshs="source ~/.zshrc"
-alias ..='cd ..'
-alias ...='cd ../..'
+#!/bin/bash
+
+# Custom Alias of @arv-anshul
 alias cls="clear"
+alias Codes="cd ~/Developer/Codes-Local"
+alias dk="docker"
+alias dkc="docker-compose"
+alias dmake="make -f ~/Developer/Makefile"
+alias zshc="code ~/.zshrc"
+alias zshs='source ~/.zshrc'
 alias zx="exit"
+alias zz="clear"
 
-# Only for jupyter notebook
-alias jn="jupyter notebook"
-alias jt-t="jt -fs 100 -tfs 16 -fs 16 -ofs 16 -dfs 16 -cellw 85% -T -f firacode -nf exosans -nfs 16 -N -t"
-alias jtdark="jt -t oceans16 -fs 100 -tfs 16 -fs 16 -ofs 16 -dfs 16 -cellw 85% -T -f firacode -nf exosans -nfs 16 -N"
-alias jtlight="jt -t grade3 -fs 100 -tfs 16 -fs 16 -ofs 16 -dfs 16 -cellw 85% -T -f firacode -nf exosans -nfs 16 -N"
-
-## git aliases
-function gc { git commit -m "$@"; }
-alias gcm="git checkout master";
-alias gs="git status";
+# Alias for GIT
+alias g="git"
 alias ga="git add";
+alias gac="git add . && git commit -a -m"
 alias gb="git branch";
-alias gpull="git pull";
-alias gf="git fetch";
-alias gfa="git fetch --all";
-alias gf="git fetch origin";
-alias gpush="git push";
+alias gch="git checkout";
+alias gcm="git checkout main";
 alias gd="git diff";
-alias gbr="git branch remote"
-alias gfr="git remote update"
-alias gbn="git checkout -B "
+alias gf="git fetch origin";
+alias gfa="git fetch --all";
+alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches"
+alias gpull="git pull";
+alias gpush="git push";
+alias gra="git remote add"
 alias grf="git reflog";
-alias grh="git reset HEAD~" # last commit
-alias gac="git add . && git commit -a -m "
-alias gsu="git push --set-upstream origin "
-alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --branches"
+alias grv="git remote -v"
+alias gs="git status";
+function gc { git commit -m "$@"; }
+
+# Alias for Python
+alias py="python3"
+alias pygr="pip freeze | grep"
+alias pyi="pip install -U"
+alias pyir="pip install -r requirements.txt"
+alias pyls="pip list"
+alias pyun-all="pip freeze | xargs pip uninstall -y -q"
+alias pyun="pip uninstall"
+
+function pycls() {
+    find . -name '.DS_Store' -type f -delete
+    find . -type d -name "__pycache__" -exec rm -rfv {} \; 2>/dev/null
+    find . -type d -name ".ipynb_checkpoints" -exec rm -rfv {} \; 2>/dev/null
+    find . -type d -name ".ruff_cache" -exec rm -rfv {} \; 2>/dev/null
+    find . -type f -name "*.pyc" -exec rm -fv {} \; 2>/dev/null
+}
+
+# Activate python virtual environment (defualt '.venv')
+function vrun() {
+    local name="${1:-".venv"}"
+    local venvpath="${name:P}"
+
+    if [[ ! -d "$venvpath" ]]; then
+        echo >&2 "Error: no such venv in current directory: $name"
+        return 1
+    fi
+
+    if [[ ! -f "$venvpath/bin/activate" ]]; then
+        echo >&2 "Error: '$name' is not a proper virtual environment"
+        return 1
+    fi
+
+    . "$venvpath/bin/activate" || return $?
+    echo "Activated virtual environment $name"
+}
+
+# Create a new virtual environment (default '.venv')
+function py-venv() {
+    local name="${1:-".venv"}"
+    virtualenv "$name"
+    echo >&2 "Created venv in '${name:P}' using virtualenv."
+    vrun "$name"
+}
