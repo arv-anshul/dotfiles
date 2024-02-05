@@ -1,13 +1,13 @@
 # dotfiles
 
-## Table of Contents
+## Files Description
 
-- [How to use](#how-to-use)
-  - [Install Git](#install-git)
-  - [Using Makefile](#using-makefile)
-  - [Using Bash Scripts](#using-bash-scripts)
-- [Microsoft Office Crack](#microsoft-office-crack)
-- [Useful Fonts](#useful-fonts)
+- **`install.sh`**: Run this script to install all the required packages and installations.
+- **`.zshrc`**: Configs for `zsh` cli.
+- **`Makefile`**: Use `make` command to install specific package.
+- **`scripts/shell/aliases.sh`**: It contains all the important aliases.
+- **`scripts/macos.sh`**: Modify the settings of macos from terminal.
+- **`agnoster-arv.zsh-theme`**: A custom `agnoster` theme for `om-my-zsh`.
 
 ## How To Use
 
@@ -19,31 +19,32 @@
   git clone https://github.com/arv-anshul/dotfiles
   ```
 
-> [!WARNING]
->
-> **Only for Author.**
->
-> Copy `.gitconfig` to `$HOME` directory to configure git for your GitHub account.
->
-> ```bash
-> mv ./.gitconfig ~/.gitconfig
-> ```
-
 ### Using Makefile
 
-- List all **`make`** commands using `make` or `make help`.
+- List all **`make`** commands using:
+  ```bash
+  make help
+  ```
 - Then, run only required one in your system to install specific package.
 
 ### Using Bash Scripts
 
-- You can also **use bash scripts** to install packages in your system.
-- First you have to make them executable using `chmod -x path/to/script.sh` and then you can run it by just refering it in terminal like `./path/to/script.sh`.
+```bash
+./install.sh
+# OR
+source ./install.sh
+```
 
-> [!IMPORTANT]
->
-> **Importnat Note for Author**
->
-> Try use Homebrew (`brew`) to install Apps and packages in your system. Install `python`, `docker`, `visual-studio-code`, `arc`, `vlc` **and more using Homebrew**.
+### Use `brew` for package installation
+
+```bash
+# For Example:
+brew install visual-studio-code
+brew install vlc
+brew install arc
+brew install python
+brew install obsidian
+```
 
 ## Microsoft Office Crack
 
