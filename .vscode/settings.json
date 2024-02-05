@@ -1,14 +1,10 @@
 {
-  "[html]": {
-    "editor.defaultFormatter": "vscode.html-language-features"
-  },
   "[json]": {
     "editor.stickyScroll.enabled": true,
     "editor.stickyScroll.maxLineCount": 10,
     "editor.wordWrap": "on"
   },
   "[markdown]": {
-    "editor.fontFamily": "Monaspace Argon, Monaspace Radon, Menlo",
     "editor.quickSuggestions": {
       "other": "on"
     },
@@ -35,13 +31,14 @@
     "source.organizeImports": "explicit"
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.fontFamily": "Menlo, Monaspace Argon, Consolas, Operator Mono Lig, JetBrains Mono, Monaspace Neon, Monaspace Radon",
+  "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
   "editor.fontLigatures": "'calt', 'liga', 'dlig', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08'",
   "editor.fontSize": 14,
   "editor.formatOnSave": true,
   "editor.guides.bracketPairs": true,
-  "editor.letterSpacing": 0.7,
-  "editor.lineHeight": 2,
+  "editor.inlineSuggest.suppressSuggestions": true,
+  "editor.letterSpacing": 0.3,
+  "editor.lineHeight": 1.8,
   "editor.minimap.autohide": true,
   "editor.minimap.enabled": false,
   "editor.minimap.renderCharacters": false,
@@ -53,6 +50,56 @@
   "editor.semanticHighlighting.enabled": true,
   "editor.snippetSuggestions": "inline",
   "editor.tokenColorCustomizations": {
+    "[Default Dark Modern]": {
+      "textMateRules": [
+        {
+          "scope": [
+            "keyword.operator.unpacking.arguments.python",
+            "keyword.operator.unpacking.parameter.python",
+            "variable.parameter.function.language.special.cls.python",
+            "variable.parameter.function.language.special.self.python"
+          ],
+          "settings": {
+            "foreground": "#569CD6"
+          }
+        },
+        {
+          "scope": [
+            "markup.list.numbered.markdown",
+            "markup.list.unnumbered.markdown",
+            "punctuation.definition.list.begin.markdown"
+          ],
+          "settings": {
+            "foreground": "#9CDCFE"
+          }
+        },
+        {
+          "scope": [
+            "heading.1.markdown",
+            "markup.bold.markdown",
+            "constant.language.boolean.yaml"
+          ],
+          "settings": {
+            "foreground": "#C586C0"
+          }
+        },
+        {
+          "scope": [
+            "heading.3.markdown",
+            "punctuation.separator.annotation.result.python"
+          ],
+          "settings": {
+            "foreground": "#DCDCAA"
+          }
+        },
+        {
+          "scope": ["markup.quote.markdown"],
+          "settings": {
+            "foreground": "#6A9955"
+          }
+        }
+      ]
+    },
     "textMateRules": [
       {
         "scope": [
@@ -73,9 +120,18 @@
       },
       {
         "scope": [
+          "constant.other.ellipsis.python",
           "constant",
           "entity.name.type.class",
           "keyword.codetag.notation",
+          "keyword.operator.unpacking.arguments.python",
+          "keyword.operator.unpacking.parameter.python",
+          "punctuation.definition.inheritance.begin.python",
+          "punctuation.definition.inheritance.end.python",
+          "punctuation.definition.list.begin.markdown",
+          "punctuation.definition.quote.begin.markdown",
+          "punctuation.separator.annotation.python",
+          "punctuation.separator.annotation.result.python",
           "variable.other.property"
         ],
         "settings": {
@@ -84,26 +140,15 @@
       },
       {
         "scope": [
-          "constant.numeric.css",
-          "constant.numeric.decimal.js",
+          "entity.name.tag.yaml",
           "invalid",
           "keyword.mysql",
           "keyword.operator",
-          "keyword.other.unit.px.css",
-          "keyword.other"
-        ],
-        "settings": {
-          "fontStyle": ""
-        }
-      },
-      {
-        "scope": [
           "variable.parameter.function.language.special.cls.python",
           "variable.parameter.function.language.special.self.python"
         ],
         "settings": {
-          "fontStyle": "",
-          "foreground": "#569CD6"
+          "fontStyle": ""
         }
       }
     ]
@@ -120,13 +165,18 @@
     "*.toml": "toml"
   },
   "files.exclude": {
+    "**/.*_cache": true,
     "**/.ipynb_checkpoints": true,
     "**/__pycache__": true
   },
   "files.refactoring.autoSave": true,
+  "git.showPushSuccessNotification": true,
+  "json.copyJsonPath.quote": "Double",
+  "json.copyJsonPath.useBracketNotation": true,
   "jupyter.askForKernelRestart": false,
   "jupyter.interactiveWindow.textEditor.executeSelection": true,
   "jupyter.notebookFileRoot": "${workspaceFolder}",
+  "jupyter.runStartupCommands": ["%load_ext autoreload", "%autoreload 2"],
   "jupyter.themeMatplotlibPlots": true,
   "markdown.updateLinksOnFileMove.enabled": "always",
   "markdown.validate.enabled": true,
@@ -151,9 +201,8 @@
   "notebook.showCellStatusBar": "visibleAfterExecute",
   "notebook.stickyScroll.enabled": true,
   "projectManager.git.baseFolders": [
-    "/Users/iarv/Documents/iCodes",
-    "/Users/iarv/Documents/OBSIDIAN",
-    "/Users/iarv/This PC"
+    "/Users/iarv/Developer",
+    "/Users/iarv/Documents/OBSIDIAN"
   ],
   "python.analysis.autoFormatStrings": true,
   "python.analysis.autoImportCompletions": true,
@@ -161,23 +210,35 @@
   "python.analysis.completeFunctionParens": true,
   "python.analysis.typeCheckingMode": "basic",
   "python.languageServer": "Pylance",
-  "ruff.lint.args": ["--config=~/Developer/pyproject.toml"],
+  "ruff.lint.args": ["--extend-unfixable=F401"],
   "ruff.lint.run": "onSave",
   "search.useIgnoreFiles": true,
   "security.workspace.trust.untrustedFiles": "open",
   "telemetry.telemetryLevel": "off",
-  "terminal.integrated.fontFamily": "Monaspace Radon, Operator Mono Lig, JetBrains Mono, Menlo",
+  "terminal.integrated.fontFamily": "Monaspace Radon, Operator Mono Lig, Menlo, JetBrains Mono",
   "terminal.integrated.fontSize": 12,
   "testing.automaticallyOpenPeekView": "never",
   "update.mode": "manual",
   "window.commandCenter": false,
+  "window.density.editorTabHeight": "compact",
   "window.zoomLevel": 1.5,
   "workbench.activityBar.location": "hidden",
   "workbench.colorCustomizations": {
-    "editorRuler.foreground": "#6663",
-    "statusBar.background": "#1e1e1e",
-    "tab.activeBackground": "#113",
-    "terminal.selectionBackground": "#a04400"
+    "[Default Dark Modern]": {
+      "editor.background": "#1c1c1c",
+      "panel.background": "#1c1c1c",
+      "sideBar.background": "#1c1c1c",
+      "tab.activeBackground": "#33a5",
+      "tab.inactiveForeground": "#fff6"
+    },
+    "editorGroupHeader.tabsBackground": "#0000",
+    "editorRuler.foreground": "#6664",
+    "scrollbar.shadow": "#0000",
+    "sideBarSectionHeader.background": "#0000",
+    "sideBarSectionHeader.border": "#0000",
+    "statusBar.background": "#0000",
+    "tab.inactiveBackground": "#0000",
+    "tree.inactiveIndentGuidesStroke": "#6668"
   },
   "workbench.editor.labelFormat": "medium",
   "workbench.editorAssociations": {
@@ -186,6 +247,7 @@
   "workbench.iconTheme": "material-icon-theme",
   "workbench.layoutControl.enabled": false,
   "workbench.productIconTheme": "material-product-icons",
+  "workbench.settings.editor": "json",
   "workbench.sideBar.location": "right",
   "workbench.startupEditor": "none",
   "zenMode.hideLineNumbers": false
