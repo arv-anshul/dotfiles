@@ -1,29 +1,27 @@
 {
   "if __name__ == 'main':": {
     "scope": "python",
-    "prefix": ["ifname"],
+    "prefix": "ifname",
     "body": ["if __name__ == '__main__':", "    ${0:...}", ""]
   },
   "1 dashed comment": {
-    "scope": ["python", "json"],
-    "prefix": ["c1"],
-    "body": ["# --- $0 --- #"]
+    "scope": "python",
+    "prefix": "c1",
+    "body": "# --- $0 --- #"
   },
   "2 dashed comment": {
     "scope": "python",
-    "prefix": ["c2"],
-    "body": ["# --- --- $0 --- --- #"]
+    "prefix": "c2",
+    "body": "# --- --- $0 --- --- #"
   },
   "n dashed comment": {
     "scope": "python",
-    "prefix": ["cc"],
-    "body": [
-      "# --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- #$0"
-    ]
+    "prefix": "cc",
+    "body": "# --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- #$0"
   },
   "multiline comment": {
     "scope": "python",
-    "prefix": ["ccc"],
+    "prefix": "ccc",
     "body": [
       "# --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- #",
       "# $1",
@@ -32,7 +30,7 @@
   },
   "streamlit readme": {
     "scope": "python",
-    "prefix": ["st-readme"],
+    "prefix": "st-readme",
     "body": [
       "\"\"\" README page for ${1:this project}. \"\"\"",
       "",
@@ -53,7 +51,7 @@
   },
   "import streamlit": {
     "scope": "python",
-    "prefix": ["stm"],
+    "prefix": "stm",
     "body": [
       "import streamlit as st",
       "$0",
@@ -64,7 +62,7 @@
   },
   "read dataframe": {
     "scope": "python",
-    "prefix": ["readf"],
+    "prefix": "readf",
     "body": [
       "${3:df} = pd.${1:read_csv}('$2')",
       "print(${3:df}.shape)",
@@ -74,12 +72,12 @@
   },
   "print dataframe": {
     "scope": "python",
-    "prefix": ["prdf"],
+    "prefix": "prdf",
     "body": ["print(${1:df}.shape)", "${1:df}.head()$0"]
   },
   "ds-import": {
     "scope": "python",
-    "prefix": ["pdnp"],
+    "prefix": "pdnp",
     "body": [
       "import numpy as np",
       "import pandas as pd",
@@ -96,22 +94,27 @@
   },
   "Optional[]": {
     "scope": "python",
-    "prefix": ["opt"],
+    "prefix": "opt",
     "body": "Optional[$TM_SELECTED_TEXT]${1: = None}"
   },
   "type | None": {
     "scope": "python",
-    "prefix": ["nne"],
+    "prefix": "nne",
     "body": "$TM_SELECTED_TEXT | None${1: = None}"
   },
   "print": {
     "scope": "python",
-    "prefix": ["prt"],
+    "prefix": "prt",
     "body": "print($TM_SELECTED_TEXT)"
   },
   "from module import constants as C": {
     "scope": "python",
-    "prefix": ["imc"],
+    "prefix": "imc",
     "body": "from ${1:module} import constants as C"
+  },
+  "from __future__ import annotations": {
+    "scope": "python",
+    "prefix": "__future__",
+    "body": "from __future__ import annotations"
   }
 }
