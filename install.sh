@@ -3,10 +3,10 @@
 ZSHRC="${HOME}/.zshrc"
 OMZ_PATH="${HOME}/.oh-my-zsh"
 
-echo -e "Installation is only for ${ZSHRC} and macos files."
+echo -e "Installation is only for '${ZSHRC}' and macos files.\n"
 
 function ask() {
-    echo -en "\n$1 (Y/n): "
+    echo -en "$1 (Y/n): "
     read resp
     if [ -z "$resp" ]; then
         response_lc="n" # empty is No
@@ -24,6 +24,7 @@ if ask "Do you want to install Homebrew?"; then
 fi
 
 ## Install Oh-My-Zsh
+echo -e "\nType \`exit\` after 'oh-my-zsh' is installed. Because 'omz' start new zsh session."
 if ask "Do you want to install Oh My ZSH?"; then
     /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
@@ -33,6 +34,7 @@ if [ -d $OMZ_PATH ]; then
     if ask "Do you want to install some required Oh-My-Zsh Plugins?"; then
         git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${OMZ_PATH}/custom/plugins/zsh-syntax-highlighting
         git clone https://github.com/zsh-users/zsh-autosuggestions.git ${OMZ_PATH}/custom/plugins/zsh-autosuggestions
+        git clone https://github.com/zsh-users/zsh-history-substring-search.git ${OMZ_PATH}/custom/plugins/zsh-history-substring-search
     fi
 fi
 
@@ -47,6 +49,12 @@ if [ ! -f $ZSHRC ]; then touch $ZSHRC; fi
 
 ## Copy and append `.zshrc` content
 if ask "Copy and append '.zshrc' file content into '$ZSHRC'"; then
+    # If omz installed just now then it create new ~/.zshrc file and move the content
+    # in "$HOME/.zshrc.pre-oh-my-zsh"
+    if [[ -e "$HOME/.zshrc.pre-oh-my-zsh" && -d $OMZ_PATH ]]; then
+        rm $ZSHRC
+        mv $HOME/.zshrc.pre-oh-my-zsh $ZSHRC
+    fi
     cat .zshrc >> $ZSHRC
 fi
 
@@ -71,3 +79,5 @@ if ask "Source essential scripts into '$ZSHRC'"; then
         echo source $DOT_CONFIG/$file >> $ZSHRC
     done
 fi
+
+echo -e "\nRestart the terminal to the effect."
