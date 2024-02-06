@@ -19,9 +19,11 @@ omz:  ## Install oh-my-zsh for terminal
 # --------------------------- Install Packages & Commands --------------------------- #
 
 zsh-plugins:  ## Install oh-my-zsh plugins
-	brew install zsh-history-substring-search
+	git clone https://github.com/zsh-users/zsh-history-substring-search.git ~/.oh-my-zsh/custom/plugins/zsh-history-substring-search
 	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 	git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+	echo "Installed '(zsh-history-substring-search zsh-syntax-highlighting zsh-autosuggestions)' to enable these \
+		write the 'plugins' field in ~/.zshrc file."
 
 spotify-mod:  ## Install SPOT-X for spotify
 	curl -sSL https://raw.githubusercontent.com/SpotX-CLI/SpotX-Mac/main/install.sh | bash
