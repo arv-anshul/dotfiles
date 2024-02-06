@@ -38,12 +38,6 @@ if [ -d $OMZ_PATH ]; then
     fi
 fi
 
-## Install agnoster theme for terminal
-if ask "Install agnoster theme for terminal?"; then
-    cp scripts/agnoster-arv.zsh-theme $OMZ_PATH/custom/
-    echo "Now, you have to put \`ZSH_THEME=\"agnoster-arv\"\` into '$ZSHRC' file."
-fi
-
 # Create `.zshrc` file (if not exists)
 if [ ! -f $ZSHRC ]; then touch $ZSHRC; fi
 
