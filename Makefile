@@ -16,6 +16,9 @@ brew:  ## Install homebrew using curl
 omz:  ## Install oh-my-zsh for terminal
 	sh -c "$$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+rye:  ## Install `rye` as python project management tool
+	curl -sSf https://rye-up.com/get | bash
+
 # --------------------------- Install Packages & Commands --------------------------- #
 
 zsh-plugins:  ## Install oh-my-zsh plugins
