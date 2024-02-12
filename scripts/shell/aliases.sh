@@ -32,12 +32,6 @@ function gc { git commit -m "$@"; }
 
 # Alias for Python
 alias py="python3"
-alias pygr="pip freeze | grep"
-alias pyi="pip install -U"
-alias pyir="pip install -r requirements.txt"
-alias pyls="pip list"
-alias pyun-all="pip freeze | xargs pip uninstall -y -q"
-alias pyun="pip uninstall"
 
 function pycls() {
     find . -name '.DS_Store' -type f -delete
@@ -45,31 +39,4 @@ function pycls() {
     find . -type d -name ".ipynb_checkpoints" -exec rm -rfv {} \; 2>/dev/null
     find . -type d -name ".ruff_cache" -exec rm -rfv {} \; 2>/dev/null
     find . -type f -name "*.pyc" -exec rm -fv {} \; 2>/dev/null
-}
-
-# Activate python virtual environment (defualt '.venv')
-function vrun() {
-    local name="${1:-".venv"}"
-    local venvpath="${name:P}"
-
-    if [[ ! -d "$venvpath" ]]; then
-        echo >&2 "Error: no such venv in current directory: $name"
-        return 1
-    fi
-
-    if [[ ! -f "$venvpath/bin/activate" ]]; then
-        echo >&2 "Error: '$name' is not a proper virtual environment"
-        return 1
-    fi
-
-    . "$venvpath/bin/activate" || return $?
-    echo "Activated virtual environment $name"
-}
-
-# Create a new virtual environment (default '.venv')
-function py-venv() {
-    local name="${1:-".venv"}"
-    virtualenv "$name"
-    echo >&2 "Created venv in '${name:P}' using virtualenv."
-    vrun "$name"
 }
