@@ -33,6 +33,11 @@ function gc { git commit -m "$@"; }
 # Alias for Python
 alias py="python3"
 
+# Alias for rye
+alias pyls="rye toolchain list"
+alias rsyn="rye sync --no-dev --no-lock"
+alias ryn="rye run"
+
 function pycls() {
     find . -name '.DS_Store' -type f -delete
     find . -type d -name "__pycache__" -exec rm -rfv {} \; 2>/dev/null
