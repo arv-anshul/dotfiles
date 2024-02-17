@@ -1,0 +1,68 @@
+"$schema" = "https://starship.rs/config-schema.json"
+
+add_newline = false
+
+# format = """
+# $directory\
+# $git_branch\
+# $git_commit\
+# $git_state\
+# $git_metrics\
+# $git_status\
+# $docker_context\
+# $python\
+# \n[\\$](bold green) 
+# """
+
+format = """
+[╭╴](bold green)\
+[](c_dark)\
+$directory\
+[](fg:c_dark bg:c_aqua)\
+$git_branch\
+$git_status\
+[](fg:c_aqua bg:c_blue)\
+$python\
+[](fg:c_blue bg:c_brown)\
+$docker_context\
+[](fg:c_brown bg:c_dark)\
+[ ](fg:c_dark)\
+$line_break\
+[╰─](bold green)$character\
+"""
+
+palette = "gruvbox_dark"
+
+[palettes.gruvbox_dark]
+c_aqua = "#689d6a"
+c_blue = "#458588"
+c_brown = "#665c54"
+c_dark = "#3c3836"
+c_green = "#98971a"
+c_orange = "#d65d0e"
+c_purple = "#b16286"
+c_red = "#cc241d"
+c_vanilla = "#fbf1c7"
+c_yellow = "#d79921"
+
+[directory]
+style = "bg:c_dark fg:c_vanilla"
+format = "[$path ](bold $style)"
+
+[git_branch]
+style = "bg:c_aqua"
+format = "[[ $symbol$branch ](bold fg:c_vanilla bg:c_aqua)]($style)"
+
+[git_status]
+style = "bg:c_aqua"
+format = "[[($all_status$ahead_behind )](bold fg:c_vanilla bg:c_aqua)]($style)"
+
+[python]
+symbol = ""
+style = "bg:c_blue"
+format = "[[ $symbol( $version) ](fg:c_vanilla bg:c_blue)]($style)"
+
+[docker_context]
+symbol = ""
+style = "bg:c_brown"
+format = "[[ $symbol( $context) ](fg:c_vanilla bg:c_brown)]($style)"
