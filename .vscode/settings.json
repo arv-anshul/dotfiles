@@ -31,9 +31,7 @@
     "source.organizeImports": "explicit"
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
   "editor.fontLigatures": "'calt', 'liga', 'dlig', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08'",
-  "editor.fontSize": 14,
   "editor.formatOnSave": true,
   "editor.guides.bracketPairs": true,
   "editor.inlineSuggest.suppressSuggestions": true,
@@ -215,7 +213,6 @@
   "search.useIgnoreFiles": true,
   "security.workspace.trust.untrustedFiles": "open",
   "telemetry.telemetryLevel": "off",
-  "terminal.integrated.fontFamily": "Monaspace Radon, Operator Mono Lig, Menlo, JetBrains Mono",
   "terminal.integrated.fontSize": 12,
   "testing.automaticallyOpenPeekView": "never",
   "update.mode": "manual",
