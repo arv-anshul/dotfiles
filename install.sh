@@ -1,9 +1,6 @@
 #!/bin/bash
 
 ZSHRC="${HOME}/.zshrc"
-OMZ_PATH="${HOME}/.oh-my-zsh"
-
-echo -e "Installation is only for '${ZSHRC}' and macos files.\n"
 
 function ask() {
     echo -en "$1 (Y/n): "
@@ -16,62 +13,66 @@ function ask() {
     [ $response_lc = "y" ]
 }
 
-# Install some essential packages
+# Ask user to continue
+ask "Do you want to continue the installation?"
+if [ $? == 1 ]; then
+    echo "🤯 Installation Cancelled!"
+    exit 1
+fi
 
 ## Install Homebrew
-if ask "Do you want to install Homebrew?"; then
+if [ ! -e "$(brew --prefix)" ]; then
+    echo "Installing 🍺 Homebrew!"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+else
+    echo "Continuing, 🍻 Homebrew is already installed!"
 fi
 
-## Install Oh-My-Zsh
-echo -e "\nType \`exit\` after 'oh-my-zsh' is installed. Because 'omz' start new zsh session."
-if ask "Do you want to install Oh My ZSH?"; then
-    /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# --- Install brew packages --- #
+
+## starship: For terminal prompt
+# https://starship.rs
+brew install starship
+
+## Install zsh plugins using `brew`
+brew install zsh-autosuggestions
+brew install zsh-fast-syntax-highlighting
+brew install zsh-history-substring-search
+brew install zsh-completions
+
+## rye: Python package manager
+# https://rye-up.com
+if ask "Install rye for python package management?"; then
+    curl -sSf https://rye-up.com/get | bash
 fi
 
-## Install Oh-My-Zsh Plugins
-if [ -d $OMZ_PATH ]; then
-    if ask "Do you want to install some required Oh-My-Zsh Plugins?"; then
-        git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${OMZ_PATH}/custom/plugins/zsh-syntax-highlighting
-        git clone https://github.com/zsh-users/zsh-autosuggestions.git ${OMZ_PATH}/custom/plugins/zsh-autosuggestions
-        git clone https://github.com/zsh-users/zsh-history-substring-search.git ${OMZ_PATH}/custom/plugins/zsh-history-substring-search
-    fi
-fi
-
-# Create `.zshrc` file (if not exists)
-if [ ! -f $ZSHRC ]; then touch $ZSHRC; fi
-
-## Copy and append `.zshrc` content
-if ask "Copy and append '.zshrc' file content into '$ZSHRC'"; then
-    # If omz installed just now then it create new ~/.zshrc file and move the content
-    # in "$HOME/.zshrc.pre-oh-my-zsh"
-    if [[ -e "$HOME/.zshrc.pre-oh-my-zsh" && -d $OMZ_PATH ]]; then
-        rm $ZSHRC
-        mv $HOME/.zshrc.pre-oh-my-zsh $ZSHRC
-    fi
-    cat .zshrc >> $ZSHRC
-fi
+# Create a backup of `.zshrc` as `.zshrc.bak` file (if exists)
+if [ -f $ZSHRC ]; then mv $ZSHRC "$ZSHRC.bak"; fi
 
 # Add configs into `.zshrc`
 DOT_CONFIG="${HOME}/.config"
 
 ## Create `~./config` dir (if not exists)
-if [ ! -d $DOT_CONFIG ]; then
-    mkdir $DOT_CONFIG
-    echo "DOT_CONFIG=\"${HOME}/.config\"" >> $ZSHRC
-fi
+if [ ! -d $DOT_CONFIG ]; then mkdir $DOT_CONFIG; fi
 
-## Copy essential files into `~/.config` folder and source them into `~/.zshrc`
+## Create symlinks of essential files into `~/.config` folder and source them into `~/.zshrc`
+# A list containing source script path to create symlink to a destination path
+links=(
+    "$(pwd)/.zshrc $PATH/.zshrc"
+    "$(pwd)/.config/aliases.sh $DOT_CONFIG/aliases.sh"
+    "$(pwd)/.config/starship.toml $DOT_CONFIG/starship.toml"
+)
 
-#? Listed files must be present into `srcipts/shell/` directory
-files_list=( "aliases.sh" )
+for link in "${links[@]}"; do
+    IFS=' ' read -r source_path destination_path <<< $link
 
-if ask "Source essential scripts into '$ZSHRC'"; then
-    for file in $files_list; do
-        echo "Copying '$file' into '$DOT_CONFIG/$file'"
-        cp ./scripts/shell/$file $DOT_CONFIG/$file
-        echo source $DOT_CONFIG/$file >> $ZSHRC
-    done
-fi
+    # Check if the source file exists
+    if [ -e "$source_path" ]; then
+        /bin/ln -s "$source_path" "$destination_path"
+        echo "Created link: $destination_path -> $source_path"
+    else
+        echo "Source file does not exist: $source_path"
+    fi
+done
 
 echo -e "\nRestart the terminal to the effect."
