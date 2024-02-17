@@ -3,11 +3,12 @@
 ## Files Description
 
 - **`install.sh`**: Run this script to install all the required packages and installations.
-- **`.zshrc`**: Configs for `zsh` cli.
+- **`.zshrc`**: Configs for `zsh` cli. (It contains more than that.)
 - **`Makefile`**: Use `make` command to install specific package.
-- **`scripts/shell/aliases.sh`**: It contains all the important aliases.
+- **`.config/aliases.sh`**: It contains all the important aliases.
+- **`.config/starship.toml`**: Custom config for [starship](https://starship.rs) terminal prompt.
 - **`scripts/macos.sh`**: Modify the settings of macos from terminal.
-- **`agnoster-arv.zsh-theme`**: A custom `agnoster` theme for `om-my-zsh`.
+- **`agnoster-arv.zsh-theme`**: A custom `agnoster` theme for `om-my-zsh`. (Now, I don't use `omz` instead `starship`.)
 
 ## How To Use
 
@@ -29,10 +30,13 @@
 
 ### Using Bash Scripts
 
+> \[WARNING\]
+>
+> Check [`install.sh`](./install.sh) script before running it.
+
 ```bash
+chmod +x ./install.sh
 ./install.sh
-# OR
-source ./install.sh
 ```
 
 ### Use `brew` for package installation
