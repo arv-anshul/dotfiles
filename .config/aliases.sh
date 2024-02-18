@@ -45,3 +45,13 @@ function pycls() {
     find . -type d -name ".ruff_cache" -exec rm -rfv {} \; 2>/dev/null
     find . -type f -name "*.pyc" -exec rm -fv {} \; 2>/dev/null
 }
+
+function colormap() {
+    range_start=${1:-0}
+    range_end=${2:-255}
+
+    for i in $(seq $range_start $range_end); do
+        print -Pn "%K{$i} ${(l:3::0:)i} %k "
+        [[ $((i % 12)) -eq 11 ]] && print
+    done
+}
