@@ -3,43 +3,45 @@
 add_newline = false
 
 format = """
-[](arv_dark)\
+$character\
 $directory\
-[](fg:arv_dark bg:arv_green)\
 $git_branch\
 $git_status\
-[](fg:arv_green) 
 """
 
 right_format = """
-[](arv_dark)\
 $python\
 $docker_context\
-$time\
-[](arv_dark)\
 """
 
 palette = "arv-anshul"
 
 [palettes.arv-anshul]
 arv_blue = "30"
+arv_red = "203"
 arv_brown = "3"
 arv_dark = "238"
 arv_green = "64"
 arv_vanilla = "230"
+arv_purple = "056"
+
+[character]
+format = "$symbol "
+success_symbol = ""
+error_symbol = "[✖](bold italic red)"
 
 [directory]
 style = "bg:arv_dark fg:arv_vanilla"
-format = "[$path ]($style)"
+format = "[](fg:arv_dark)[$path]($style)[](fg:arv_dark)"
 
 [git_branch]
-style = "bg:arv_green"
-format = "[[ $symbol$branch ](fg:arv_vanilla bg:arv_green)]($style)"
-symbol = " "
+style = "fg:arv_vanilla bg:arv_green"
+format = "[](fg:arv_green)[$symbol $branch ]($style)"
+symbol = ""
 
 [git_status]
-style = "bg:arv_green"
-format = "[[($all_status$ahead_behind )](bold italic fg:arv_vanilla bg:arv_green)]($style)"
+style = "fg:arv_vanilla bg:arv_green"
+format = "[($all_status$ahead_behind)](bold italic $style)[](fg:arv_green) "
 # Use Nerd Fonts
 # ahead = "󱓞"
 # behind = ""
@@ -47,10 +49,10 @@ format = "[[($all_status$ahead_behind )](bold italic fg:arv_vanilla bg:arv_green
 
 [python]
 symbol = ""
-style = "bg:arv_blue"
-format = "[[ $symbol( $version)[( \\($virtualenv\\))](bold $style) ](fg:arv_vanilla bg:arv_blue)]($style)"
+style = "fg:arv_vanilla bg:arv_blue"
+format = "[](fg:arv_blue)[$symbol ($version)[( \\($virtualenv\\))](bold $style)]($style)[](fg:arv_blue)"
 
 [docker_context]
 symbol = ""
-style = "bg:arv_brown"
-format = "[[ $symbol( $context) ](fg:arv_vanilla bg:arv_brown)]($style)"
+style = "fg:arv_vanilla bg:arv_red"
+format = "[](fg:arv_red)[$symbol ($context)]($style)[](fg:arv_red)"
