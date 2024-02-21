@@ -47,11 +47,12 @@ function pycls() {
 }
 
 function colormap() {
-    range_start=${1:-0}
+    range_start=${1:-1}
     range_end=${2:-255}
 
     for i in $(seq $range_start $range_end); do
-        print -Pn "%K{$i} ${(l:3::0:)i} %k "
-        [[ $((i % 12)) -eq 11 ]] && print
+        echo -en "\e[48;5;${i}m  ${(l:3::0:)i}  \e[0m "
+        [[ $((i % 10)) -eq 0 ]] && echo
     done
+    return 0
 }
