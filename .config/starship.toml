@@ -3,27 +3,33 @@
 add_newline = false
 
 format = """
-$character\
 $directory\
 $git_branch\
 $git_status\
+$character\
 """
 
 right_format = """
 $python\
 $docker_context\
+(
+[](fg:arv_custom)
+${custom.github}\
+${custom.mkdocs}\
+${custom.vscode}\
+${custom.pre-commit}\
+[](fg:arv_custom)
+)
 """
 
 palette = "arv-anshul"
 
 [palettes.arv-anshul]
-arv_blue = "30"
-arv_red = "203"
-arv_brown = "3"
-arv_dark = "238"
-arv_green = "64"
-arv_vanilla = "230"
-arv_purple = "056"
+arv_dir = "203"
+arv_docker = "026"
+arv_git = "063"
+arv_python = "028"
+arv_custom = "236"
 
 [character]
 format = "$symbol "
@@ -31,28 +37,52 @@ success_symbol = ""
 error_symbol = "[✖](bold italic red)"
 
 [directory]
-style = "bg:arv_dark fg:arv_vanilla"
-format = "[](fg:arv_dark)[$path]($style)[](fg:arv_dark)"
+style = "arv_dir"
+format = "[](fg:$style)[$path](bold bg:$style)[](fg:$style)"
 
 [git_branch]
-style = "fg:arv_vanilla bg:arv_green"
-format = "[](fg:arv_green)[$symbol $branch ]($style)"
+style = "arv_git"
+format = "[](fg:$style)[$symbol$branch](bg:$style)"
 symbol = ""
 
 [git_status]
-style = "fg:arv_vanilla bg:arv_green"
-format = "[($all_status$ahead_behind)](bold italic $style)[](fg:arv_green) "
-# Use Nerd Fonts
-# ahead = "󱓞"
-# behind = ""
-# modified = ""
+style = "arv_git"
+format = "[( $all_status$ahead_behind)](bold italic bg:$style)[](fg:$style)"
+ahead = "󰑣"
+behind = ""
+modified = ""
 
 [python]
 symbol = ""
-style = "fg:arv_vanilla bg:arv_blue"
-format = "[](fg:arv_blue)[$symbol ($version)[( \\($virtualenv\\))](bold $style)]($style)[](fg:arv_blue)"
+style = "arv_python"
+format = "[](fg:$style)[$symbol( $version)[( \\($virtualenv\\))](bold bg:$style)](bg:$style)[](fg:$style)"
 
 [docker_context]
 symbol = ""
-style = "fg:arv_vanilla bg:arv_red"
-format = "[](fg:arv_red)[$symbol ($context)]($style)[](fg:arv_red)"
+style = "arv_docker"
+format = "[](fg:$style)[$symbol ($context)](bg:$style)[](fg:$style)"
+
+[custom.github]
+detect_folders = [".github"]
+format = "[$symbol]($style)"
+style = "bg:arv_custom"
+symbol = " "
+
+[custom.mkdocs]
+detect_files = ["mkdocs.yaml", "mkdocs.yml"]
+detect_folders = ["docs"]
+format = "[$symbol]($style)"
+style = "bg:arv_custom"
+symbol = "󱔗 "
+
+[custom.pre-commit]
+detect_files = [".pre-commit-config.yaml", ".pre-commit-config.yml"]
+format = "[$symbol]($style)"
+style = "bg:arv_custom"
+symbol = "󰛢"
+
+[custom.vscode]
+detect_folders = [".vscode"]
+format = "[$symbol]($style)"
+style = "bg:arv_custom"
+symbol = "󰨞 "
