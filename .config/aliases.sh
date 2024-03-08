@@ -29,13 +29,11 @@ alias grf="git reflog"
 alias grv="git remote -v"
 alias gs="git status"
 alias gc="git commit -m"
-
-# Alias for Python
-alias py="python3"
+alias git-init-commit="git init && git commit --allow-empty -m '🎉 Initial Commit'"
 
 # Alias for rye
-alias pyls="rye toolchain list"
 alias rsyn="rye sync --no-dev"
+alias rye-init="rye init --no-readme --no-pin"
 alias ryn="rye run"
 
 function pycls() {
