@@ -8,6 +8,11 @@ PYTHON ?= python3
 help:  ## Help command for Makefile
 	curl -sSL https://gist.githubusercontent.com/arv-anshul/84a87b6ac9b15f51b9b8d0cdeda33f5f/raw/f48d6fa8d2e5e5769af347e8baa2677cc254c5c6/make_help_decorator.py | $(PYTHON)
 
+# ----------------------- Run install script ----------------------- #
+
+install: install.sh  ## Run `install.sh` script
+	chmod +x ./$< && ./$<
+
 # ----------------------- Install Basic Requirements Commands ----------------------- #
 
 brew:  ## Install homebrew using curl
