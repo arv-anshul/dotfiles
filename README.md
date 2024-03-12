@@ -60,7 +60,7 @@ make spotify-mod  # Install SPOT-X for spotify
 
 ### Using Bash Script
 
-> \[WARNING\]
+> \[!CAUTION\]
 >
 > Check [`install.sh`](./install.sh) script before running it.
 
@@ -83,7 +83,7 @@ Download & Install [`serializer`](https://gist.github.com/zthxxx/9ddc171d00df98c
 
 ## Fonts
 
-> \[!CAUTION\]
+> \[!IMPORTANT\]
 >
 > If you are using `brew` to install fonts then make sure you have ran the `brew tap homebrew/cask-fonts` earlier 🤓.
 
