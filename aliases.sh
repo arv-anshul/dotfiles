@@ -11,6 +11,11 @@ alias zshs='source ~/.zshrc'
 alias zx="exit"
 alias zz="clear"
 
+# Basic aliases
+alias lsa="ls -lahFG"
+alias ..="cd .."
+alias py="python"
+
 # Alias for GIT
 alias g="git"
 alias ga="git add"

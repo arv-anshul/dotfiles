@@ -1,7 +1,5 @@
 #!/bin/bash
 
-ZSHRC="${HOME}/.zshrc"
-
 function ask() {
     echo -en "$1 (Y/n): "
     read resp
@@ -20,47 +18,40 @@ if [ $? == 1 ]; then
     exit 1
 fi
 
-## Install Homebrew
-if [ ! -e "$(brew --prefix)" ]; then
-    echo "Installing 🍺 Homebrew!"
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-else
-    echo "Continuing, 🍻 Homebrew is already installed!"
-fi
+# List of files/folders to symlink in $HOME
+files=(
+    .zshrc
+    aliases.sh
+)
 
-# --- Install brew packages --- #
+# Create a backup of dotfiles in a directory
+BACKUP_DIR="${HOME}/.backup"
+mkdir $BACKUP_DIR
+for file in "${files[@]}"; do
+    echo "Creating backup of $file in $BACKUP_DIR."
+    if [-f "${HOME}/$file" ]; then
+        mv $file $BACKUP_DIR
+    fi
+done
 
-## starship: For terminal prompt
-# https://starship.rs
-brew install starship
+# Create symlinks (will overwrite old dotfiles)
+for file in "${files[@]}"; do
+    echo "Creating symlink to $file in home directory."
+    ln -sf "$(pwd)/${file}" "${HOME}/.${file}"
+done
 
-## Install zsh plugins using `brew`
-brew install zsh-autosuggestions
-brew install zsh-fast-syntax-highlighting
-brew install zsh-history-substring-search
-brew install zsh-completions
+# Run all scripts from `scripts/` directory
+for script in scripts/*; do
+    echo "Running ./$script"
+    ./$script
+done
 
-## rye: Python package manager
-# https://rye-up.com
-if ask "Install rye for python package management?"; then
-    curl -sSf https://rye-up.com/get | bash
-fi
+# Create `~/.config` dir (if not exists)
+if [ ! -d "~/.config" ]; then mkdir "~/.config"; fi
 
-# Create a backup of `.zshrc` as `.zshrc.bak` file (if exists)
-if [ -f $ZSHRC ]; then mv $ZSHRC "$ZSHRC.bak"; fi
-
-# Add configs into `.zshrc`
-DOT_CONFIG="${HOME}/.config"
-
-## Create `~./config` dir (if not exists)
-if [ ! -d $DOT_CONFIG ]; then mkdir $DOT_CONFIG; fi
-
-## Create symlinks of essential files into `~/.config` folder and source them into `~/.zshrc`
-# A list containing source script path to create symlink to a destination path
+# Create symlink of some config files to their location
 links=(
-    "$(pwd)/.zshrc $PATH/.zshrc"
-    "$(pwd)/.config/aliases.sh $DOT_CONFIG/aliases.sh"
-    "$(pwd)/.config/starship.toml $DOT_CONFIG/starship.toml"
+    "$(pwd)/.config/starship.toml ${HOME}/.config/starship.toml"
 )
 
 for link in "${links[@]}"; do
@@ -75,4 +66,5 @@ for link in "${links[@]}"; do
     fi
 done
 
-echo -e "\nRestart the terminal to the effect."
+echo "Installation Complete!"
+echo "Restart the terminal to the effect."
