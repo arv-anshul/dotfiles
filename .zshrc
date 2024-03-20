@@ -5,7 +5,7 @@ export PATH=/opt/homebrew/bin:$PATH
 export HOMEBREW_NO_AUTO_UPDATE=1
 
 # Aliases: Basic
-source $HOME/aliases.sh
+source $HOME/.aliases
 
 # ZSH: Basic Plugins
 source /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh

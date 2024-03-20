@@ -26,7 +26,7 @@ By using these scripts, you acknowledge and accept the risk of potential data lo
 - **`install.sh`**: Run this script to install all the required packages and installations. (See [**Using Bash Script**](#using-bash-script) section)
 - **`.zshrc`**: Configs for `zsh` cli. (It contains more than that.)
 - **`Makefile`**: Use `make` command to install specific package.
-- **`aliases.sh`**: Contains important aliases.
+- **`.aliases`**: Contains important aliases.
 - **`.config/starship.toml`**: Custom config for [starship](https://starship.rs) terminal prompt.
 - **`scripts/macos.sh`**: Modify the settings of macos from terminal.
 - **`scripts/*`**: `scripts/` directory contains some bash scripts which runs from `install.sh` script.
