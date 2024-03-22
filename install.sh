@@ -40,12 +40,6 @@ for file in "${files[@]}"; do
     ln -sf "$(pwd)/${file}" "${HOME}/.${file}"
 done
 
-# Run all scripts from `scripts/` directory
-for script in scripts/*; do
-    echo "Running ./$script"
-    ./$script
-done
-
 # Create `~/.config` dir (if not exists)
 if [ ! -d "~/.config" ]; then mkdir "~/.config"; fi
 
@@ -64,6 +58,12 @@ for link in "${links[@]}"; do
     else
         echo "Source file does not exist: $source_path"
     fi
+done
+
+# Run all scripts from `scripts/` directory
+for script in scripts/*; do
+    echo "Running ./$script"
+    ./$script
 done
 
 echo "Installation Complete!"
