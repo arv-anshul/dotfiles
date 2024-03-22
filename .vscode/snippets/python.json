@@ -1,13 +1,11 @@
 {
   "1 dashed comment": {
     "body": "# --- $0 --- #",
-    "prefix": "c1",
-    "scope": "python"
+    "prefix": "c1"
   },
   "2 dashed comment": {
     "body": "# --- --- $0 --- --- #",
-    "prefix": "c2",
-    "scope": "python"
+    "prefix": "c2"
   },
   "ds-import": {
     "body": [
@@ -17,23 +15,19 @@
       "from matplotlib import pyplot as plt"
     ],
     "description": "Import basic data science libraries.",
-    "prefix": "pdnp",
-    "scope": "python"
+    "prefix": "pdnp"
   },
   "from __future__ import annotations": {
     "body": "from __future__ import annotations",
-    "prefix": "__future__",
-    "scope": "python"
+    "prefix": "__future__"
   },
   "from module import constants as C": {
     "body": "from ${1:module} import constants as C",
-    "prefix": "imc",
-    "scope": "python"
+    "prefix": "imc"
   },
   "if __name__ == 'main':": {
     "body": ["if __name__ == '__main__':", "    ${0:...}", ""],
-    "prefix": "ifname",
-    "scope": "python"
+    "prefix": "ifname"
   },
   "import streamlit": {
     "body": [
@@ -43,8 +37,7 @@
       "st.set_page_config(\"${TM_FILENAME_BASE/[_]/ /g}\", \"😃\", \"wide\", \"expanded\")"
     ],
     "description": "Streamlit readme page.",
-    "prefix": "stm",
-    "scope": "python"
+    "prefix": "stm"
   },
   "multiline comment": {
     "body": [
@@ -52,28 +45,23 @@
       "# $1",
       "# --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- #$0"
     ],
-    "prefix": "ccc",
-    "scope": "python"
+    "prefix": "ccc"
   },
   "n dashed comment": {
     "body": "# --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- #$0",
-    "prefix": "cc",
-    "scope": "python"
+    "prefix": "cc"
   },
   "Optional[]": {
     "body": "Optional[$TM_SELECTED_TEXT]${1: = None}",
-    "prefix": "opt",
-    "scope": "python"
+    "prefix": "opt"
   },
   "print": {
     "body": "print($TM_SELECTED_TEXT)",
-    "prefix": "prt",
-    "scope": "python"
+    "prefix": "prt"
   },
   "print dataframe": {
     "body": ["print(${1:df}.shape)", "${1:df}.head()$0"],
-    "prefix": "prdf",
-    "scope": "python"
+    "prefix": "prdf"
   },
   "read dataframe": {
     "body": [
@@ -82,8 +70,7 @@
       "${3:df}.head()$0"
     ],
     "description": "Import CSV file as DataFrame.",
-    "prefix": "readf",
-    "scope": "python"
+    "prefix": "readf"
   },
   "streamlit readme": {
     "body": [
@@ -103,18 +90,15 @@
       "    st.error('README.md file not found.', icon='🔥')",
       "$0"
     ],
-    "prefix": "st-readme",
-    "scope": "python"
+    "prefix": "st-readme"
   },
   "train_test_split": {
     "body": "X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)$0",
     "description": "Write train_test_split line at once.",
-    "prefix": "train_test_split",
-    "scope": "python"
+    "prefix": "train_test_split"
   },
   "type | None": {
     "body": "$TM_SELECTED_TEXT | None${1: = None}",
-    "prefix": "nne",
-    "scope": "python"
+    "prefix": "nne"
   }
 }

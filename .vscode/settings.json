@@ -5,13 +5,22 @@
     "editor.wordWrap": "on"
   },
   "[markdown]": {
+    "editor.fontFamily": "Monaspace Radon, Menlo",
     "editor.quickSuggestions": {
       "other": "on"
     },
     "editor.stickyScroll.enabled": true
   },
   "[python]": {
+    "editor.defaultFoldingRangeProvider": "charliermarsh.ruff",
     "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  "[scminput]": {
+    "editor.rulers": [50, 72],
+    "editor.wordWrap": "off"
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
   },
   "[yaml]": {
     "editor.wordWrap": "on"
@@ -24,14 +33,15 @@
   "cSpell.userWords": [],
   "debug.terminal.clearBeforeReusing": true,
   "diffEditor.hideUnchangedRegions.enabled": true,
-  "diffEditor.ignoreTrimWhitespace": false,
   "editor.accessibilitySupport": "off",
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit",
     "source.organizeImports": "explicit"
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontFamily": "Menlo, Monaco, Operator Mono Lig, JetBrainsMono Nerd Font, MonoLisa",
   "editor.fontLigatures": "'calt', 'liga', 'dlig', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08'",
+  "editor.fontSize": 12,
   "editor.formatOnSave": true,
   "editor.guides.bracketPairs": true,
   "editor.inlineSuggest.suppressSuggestions": true,
@@ -73,9 +83,11 @@
         },
         {
           "scope": [
+            "constant.language.boolean.yaml",
+            "constant.language.null.yaml",
+            "constant.other.ellipsis.python",
             "heading.1.markdown",
-            "markup.bold.markdown",
-            "constant.language.boolean.yaml"
+            "markup.bold.markdown"
           ],
           "settings": {
             "foreground": "#C586C0"
@@ -84,6 +96,7 @@
         {
           "scope": [
             "heading.3.markdown",
+            "punctuation.definition.block.sequence.item.yaml",
             "punctuation.separator.annotation.result.python"
           ],
           "settings": {
@@ -120,10 +133,12 @@
         "scope": [
           "constant.other.ellipsis.python",
           "constant",
+          "entity.name.tag.yaml",
           "entity.name.type.class",
           "keyword.codetag.notation",
           "keyword.operator.unpacking.arguments.python",
           "keyword.operator.unpacking.parameter.python",
+          "punctuation.definition.block.sequence.item.yaml",
           "punctuation.definition.inheritance.begin.python",
           "punctuation.definition.inheritance.end.python",
           "punctuation.definition.list.begin.markdown",
@@ -138,7 +153,6 @@
       },
       {
         "scope": [
-          "entity.name.tag.yaml",
           "invalid",
           "keyword.mysql",
           "keyword.operator",
@@ -160,24 +174,30 @@
   "extensions.ignoreRecommendations": true,
   "files.associations": {
     "*.env": "properties",
-    "*.toml": "toml"
+    ".dockerignore": "ignore",
+    "requirements-*.lock": "pip-requirements",
+    "requirements-*.txt": "pip-requirements",
+    "requirements.lock": "pip-requirements"
   },
   "files.exclude": {
     "**/.*_cache": true,
     "**/.ipynb_checkpoints": true,
-    "**/__pycache__": true
+    "**/__pycache__": true,
+    ".venv": true
   },
   "files.refactoring.autoSave": true,
   "git.showPushSuccessNotification": true,
   "json.copyJsonPath.quote": "Double",
   "json.copyJsonPath.useBracketNotation": true,
   "jupyter.askForKernelRestart": false,
+  "jupyter.formatStackTraces": true,
   "jupyter.interactiveWindow.textEditor.executeSelection": true,
   "jupyter.notebookFileRoot": "${workspaceFolder}",
   "jupyter.runStartupCommands": ["%load_ext autoreload", "%autoreload 2"],
   "jupyter.themeMatplotlibPlots": true,
   "markdown.updateLinksOnFileMove.enabled": "always",
   "markdown.validate.enabled": true,
+  "material-icon-theme.hidesExplorerArrows": true,
   "notebook.cellToolbarLocation": {
     "default": "left"
   },
@@ -198,33 +218,36 @@
   "notebook.output.wordWrap": true,
   "notebook.showCellStatusBar": "visibleAfterExecute",
   "notebook.stickyScroll.enabled": true,
-  "projectManager.git.baseFolders": [
-    "/Users/iarv/Developer",
-    "/Users/iarv/Documents/OBSIDIAN"
-  ],
+  "projectManager.git.baseFolders": ["~/Developer"],
   "python.analysis.autoFormatStrings": true,
   "python.analysis.autoImportCompletions": true,
   "python.analysis.autoSearchPaths": true,
   "python.analysis.completeFunctionParens": true,
   "python.analysis.typeCheckingMode": "basic",
   "python.languageServer": "Pylance",
+  "python.terminal.activateEnvironment": false,
   "ruff.lint.args": ["--extend-unfixable=F401"],
   "ruff.lint.run": "onSave",
+  "scm.inputFontFamily": "Operator Mono Lig, Menlo",
   "search.useIgnoreFiles": true,
   "security.workspace.trust.untrustedFiles": "open",
   "telemetry.telemetryLevel": "off",
-  "terminal.integrated.fontSize": 12,
+  "terminal.integrated.fontFamily": "Monaspace Radon, JetBrainsMono Nerd Font, Menlo",
+  "terminal.integrated.lineHeight": 1.2,
   "testing.automaticallyOpenPeekView": "never",
   "update.mode": "manual",
   "window.commandCenter": false,
+  "window.customTitleBarVisibility": "windowed",
   "window.density.editorTabHeight": "compact",
-  "window.zoomLevel": 1.5,
-  "workbench.activityBar.location": "hidden",
+  "window.zoomLevel": 1.6,
+  "workbench.activityBar.location": "top",
   "workbench.colorCustomizations": {
     "[Default Dark Modern]": {
       "editor.background": "#1c1c1c",
+      "editorLineNumber.activeForeground": "#fff",
       "panel.background": "#1c1c1c",
       "sideBar.background": "#1c1c1c",
+      "statusBar.background": "#1c1c1c",
       "tab.activeBackground": "#33a5",
       "tab.inactiveForeground": "#fff6"
     },

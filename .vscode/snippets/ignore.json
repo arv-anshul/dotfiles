@@ -1,8 +1,7 @@
 {
   ".dockerignore": {
     "body": ["docker-compose.yml", "Dockerfile", ".docker"],
-    "prefix": "docker",
-    "scope": "ignore"
+    "prefix": "docker"
   },
   ".gitignore": {
     "body": [
@@ -23,18 +22,15 @@
       ""
     ],
     "description": "A python repo gitignore snippet.",
-    "prefix": "py",
-    "scope": "ignore"
+    "prefix": "py"
   },
   "Extra Ignore": {
     "body": ["data/", "logs/"],
     "description": "Extra ignore for a common python project.",
-    "prefix": "extra",
-    "scope": "ignore"
+    "prefix": "extra"
   },
   "RoughIgnore": {
     "body": ["*__rough__*.*", "*.arv", "arv.*", "*.arv.*"],
-    "prefix": "rough",
-    "scope": "ignore"
+    "prefix": "rough"
   }
 }

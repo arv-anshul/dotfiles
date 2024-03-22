@@ -4,40 +4,23 @@
       "<details>",
       "<summary>${1:summary}</summary>",
       "",
-      "$0",
+      "$TM_SELECTED_TEXT",
       "",
       "</details>"
     ],
-    "prefix": ["details"],
-    "scope": "markdown"
+    "prefix": "details"
   },
   "github link": {
     "body": "https://github.com/arv-anshul",
-    "prefix": ["gha"],
-    "scope": "markdown"
+    "prefix": "gha"
   },
   "html tag": {
-    "body": ["<${1:p}${2}>$0</${1:p}>"],
-    "prefix": ["ptag"],
-    "scope": "markdown"
+    "body": "<${1:p}${2}>${3:$TM_SELECTED_TEXT}</${1:p}>$0",
+    "prefix": "ptag"
   },
   "img tag": {
-    "body": ["<img src=\"${1:https://}\" ${2|width,height|}=\"${3:40}px\">"],
-    "prefix": ["img"],
-    "scope": "markdown"
-  },
-  "md file properties": {
-    "body": [
-      "---",
-      "tags: ",
-      "  - ${1:doc-tags}",
-      "created-on: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE",
-      "description: ${2:\"Describe the file contents.\"}",
-      "---",
-      ""
-    ],
-    "prefix": ["ppp"],
-    "scope": "markdown"
+    "body": "<img src=\"${1:https://}\" ${2|width,height|}=\"${3:40}px\">",
+    "prefix": "img"
   },
   "raise issues": {
     "body": [
@@ -46,7 +29,6 @@
       "If you have any issue or query related to this project you can raise [here](https://github.com/arv-anshul/$1/issues).$0"
     ],
     "description": "Snippet for raise issues section.",
-    "prefix": ["issues"],
-    "scope": "markdown"
+    "prefix": "issues"
   }
 }

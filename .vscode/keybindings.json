@@ -23,7 +23,7 @@
     "key": "cmd+n"
   },
   {
-    "key": "cmd+n",
-    "command": "-workbench.action.files.newUntitledFile"
+    "command": "-workbench.action.files.newUntitledFile",
+    "key": "cmd+n"
   }
 ]
