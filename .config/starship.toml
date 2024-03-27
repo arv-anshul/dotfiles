@@ -22,14 +22,21 @@ ${custom.pre-commit}\
 )
 """
 
-palette = "arv-anshul"
+palette = "arv-anshul-color"
 
-[palettes.arv-anshul]
+[palettes.arv-anshul-ansi]
 arv_dir = "203"
 arv_docker = "026"
 arv_git = "063"
 arv_python = "028"
 arv_custom = "236"
+
+[palettes.arv-anshul-color]
+arv_dir = "bright-red"
+arv_docker = "bright-blue"
+arv_git = "blue"
+arv_python = "green"
+arv_custom = "black"
 
 [character]
 format = "$symbol "
