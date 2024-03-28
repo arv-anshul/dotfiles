@@ -23,5 +23,5 @@ fi
 eval "$(starship init zsh)"
 
 # Rye: Python package manager
-source /Users/iarv/.rye/env
+source $HOME/.rye/env
 eval "$(rye self completion -s zsh)"
