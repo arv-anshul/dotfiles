@@ -63,7 +63,7 @@ behind = ""
 modified = ""
 
 [python]
-symbol = ""
+symbol = "󰌠"
 style = "arv_python"
 format = "[](fg:$style)[$symbol( $version)[( \\($virtualenv\\))](bold bg:$style)](bg:$style)[](fg:$style)"
 
@@ -73,7 +73,7 @@ style = "arv_rust"
 format = "[](fg:$style)[$symbol( $version)](bg:$style)[](fg:$style)"
 
 [docker_context]
-symbol = ""
+symbol = "󰡨"
 style = "arv_docker"
 format = "[](fg:$style)[$symbol ($context)](bg:$style)[](fg:$style)"
 
@@ -81,7 +81,7 @@ format = "[](fg:$style)[$symbol ($context)](bg:$style)[](fg:$style)"
 detect_folders = [".github"]
 format = "[$symbol]($style)"
 style = "bg:arv_custom"
-symbol = " "
+symbol = "󰊤 "
 
 [custom.mkdocs]
 detect_files = ["mkdocs.yaml", "mkdocs.yml"]
