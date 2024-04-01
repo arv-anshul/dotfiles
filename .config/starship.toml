@@ -11,6 +11,7 @@ $character\
 
 right_format = """
 $python\
+$rust\
 $docker_context\
 (
 [](fg:arv_custom)
@@ -29,6 +30,7 @@ arv_dir = "203"
 arv_docker = "026"
 arv_git = "063"
 arv_python = "028"
+arv_rust = "131"
 arv_custom = "236"
 
 [palettes.arv-anshul-color]
@@ -36,6 +38,7 @@ arv_dir = "bright-red"
 arv_docker = "bright-blue"
 arv_git = "blue"
 arv_python = "green"
+arv_rust = "red"
 arv_custom = "black"
 
 [character]
@@ -63,6 +66,11 @@ modified = ""
 symbol = ""
 style = "arv_python"
 format = "[](fg:$style)[$symbol( $version)[( \\($virtualenv\\))](bold bg:$style)](bg:$style)[](fg:$style)"
+
+[rust]
+symbol = "󱘗"
+style = "arv_rust"
+format = "[](fg:$style)[$symbol( $version)](bg:$style)[](fg:$style)"
 
 [docker_context]
 symbol = ""
