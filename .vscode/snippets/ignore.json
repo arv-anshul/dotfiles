@@ -30,7 +30,7 @@
     "prefix": "extra"
   },
   "RoughIgnore": {
-    "body": ["*__rough__*.*", "*.arv", "arv.*", "*.arv.*"],
-    "prefix": "rough"
+    "body": ["*.arv", "arv.*", "*.arv.*"],
+    "prefix": "arv"
   }
 }

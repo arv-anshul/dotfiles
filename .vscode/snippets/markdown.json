@@ -14,21 +14,12 @@
     "body": "https://github.com/arv-anshul",
     "prefix": "gha"
   },
-  "html tag": {
+  "p tag": {
     "body": "<${1:p}${2}>${3:$TM_SELECTED_TEXT}</${1:p}>$0",
     "prefix": "ptag"
   },
   "img tag": {
     "body": "<img src=\"${1:https://}\" ${2|width,height|}=\"${3:40}px\">",
     "prefix": "img"
-  },
-  "raise issues": {
-    "body": [
-      "### Issues",
-      "",
-      "If you have any issue or query related to this project you can raise [here](https://github.com/arv-anshul/$1/issues).$0"
-    ],
-    "description": "Snippet for raise issues section.",
-    "prefix": "issues"
   }
 }
