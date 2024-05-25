@@ -1,4 +1,10 @@
 {
+  "[dockerfile]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[ignore]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
   "[json]": {
     "editor.stickyScroll.enabled": true,
     "editor.stickyScroll.maxLineCount": 10,
@@ -11,6 +17,9 @@
     },
     "editor.stickyScroll.enabled": true
   },
+  "[properties]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
   "[python]": {
     "editor.defaultFoldingRangeProvider": "charliermarsh.ruff",
     "editor.defaultFormatter": "charliermarsh.ruff"
@@ -18,6 +27,9 @@
   "[scminput]": {
     "editor.rulers": [50, 72],
     "editor.wordWrap": "off"
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
   },
   "[toml]": {
     "editor.defaultFormatter": "tamasfe.even-better-toml"
@@ -40,8 +52,10 @@
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "Menlo, Monaco, Operator Mono Lig, JetBrainsMono Nerd Font, MonoLisa",
-  "editor.fontLigatures": "'calt', 'liga', 'dlig', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08'",
+  // "editor.fontLigatures": "'calt', 'liga', 'dlig', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08'",
+  "editor.fontLigatures": true,
   "editor.fontSize": 12,
+  "editor.fontVariations": true,
   "editor.formatOnSave": true,
   "editor.guides.bracketPairs": true,
   "editor.inlineSuggest.suppressSuggestions": true,
@@ -107,6 +121,12 @@
           "scope": ["markup.quote.markdown"],
           "settings": {
             "foreground": "#6A9955"
+          }
+        },
+        {
+          "scope": ["heading.4.markdown"],
+          "settings": {
+            "foreground": "#808080"
           }
         }
       ]
@@ -177,7 +197,9 @@
     ".dockerignore": "ignore",
     "requirements-*.lock": "pip-requirements",
     "requirements-*.txt": "pip-requirements",
-    "requirements.lock": "pip-requirements"
+    "requirements.lock": "pip-requirements",
+    "*.py.arv": "python",
+    "*.md.arv": "markdown"
   },
   "files.exclude": {
     "**/.*_cache": true,
@@ -186,17 +208,25 @@
     ".venv": true
   },
   "files.refactoring.autoSave": true,
+  "files.trimTrailingWhitespace": true,
   "git.showPushSuccessNotification": true,
   "json.copyJsonPath.quote": "Double",
   "json.copyJsonPath.useBracketNotation": true,
   "jupyter.askForKernelRestart": false,
-  "jupyter.formatStackTraces": true,
   "jupyter.interactiveWindow.textEditor.executeSelection": true,
   "jupyter.notebookFileRoot": "${workspaceFolder}",
   "jupyter.runStartupCommands": ["%load_ext autoreload", "%autoreload 2"],
   "jupyter.themeMatplotlibPlots": true,
   "markdown.updateLinksOnFileMove.enabled": "always",
   "markdown.validate.enabled": true,
+  "material-icon-theme.files.associations": {
+    "*.arv": "vedic"
+  },
+  "material-icon-theme.folders.associations": {
+    "docs.arv": "docs",
+    "ml": "robot",
+    ".venv": "python"
+  },
   "material-icon-theme.hidesExplorerArrows": true,
   "notebook.cellToolbarLocation": {
     "default": "left"
@@ -210,10 +240,11 @@
   "notebook.diff.ignoreOutputs": true,
   "notebook.formatOnCellExecution": true,
   "notebook.lineNumbers": "on",
-  "notebook.markup.fontSize": 16,
+  "notebook.markup.fontSize": 14,
   "notebook.output.fontFamily": "Menlo",
-  "notebook.output.fontSize": 15,
+  "notebook.output.fontSize": 13,
   "notebook.output.lineHeight": 1.1,
+  "notebook.output.minimalErrorRendering": true,
   "notebook.output.textLineLimit": 50,
   "notebook.output.wordWrap": true,
   "notebook.showCellStatusBar": "visibleAfterExecute",
@@ -225,7 +256,6 @@
   "python.analysis.completeFunctionParens": true,
   "python.analysis.typeCheckingMode": "basic",
   "python.languageServer": "Pylance",
-  "python.terminal.activateEnvironment": false,
   "ruff.lint.args": ["--extend-unfixable=F401"],
   "ruff.lint.run": "onSave",
   "scm.inputFontFamily": "Operator Mono Lig, Menlo",
@@ -239,7 +269,7 @@
   "window.commandCenter": false,
   "window.customTitleBarVisibility": "windowed",
   "window.density.editorTabHeight": "compact",
-  "window.zoomLevel": 1.6,
+  "window.zoomLevel": 1,
   "workbench.activityBar.location": "top",
   "workbench.colorCustomizations": {
     "[Default Dark Modern]": {
@@ -262,7 +292,8 @@
   },
   "workbench.editor.labelFormat": "medium",
   "workbench.editorAssociations": {
-    "*.ipynb": "jupyter-notebook"
+    "*.ipynb": "jupyter-notebook",
+    "*.ipynb.arv": "jupyter-notebook"
   },
   "workbench.iconTheme": "material-icon-theme",
   "workbench.layoutControl.enabled": false,
