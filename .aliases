@@ -34,7 +34,8 @@ alias grf="git reflog"
 alias grv="git remote -v"
 alias gs="git status"
 alias gss="git status -s"
-alias gc="git commit -m"
+alias gc="git commit"
+alias gsw="git switch"
 alias git-init-commit="git init && git commit --allow-empty -m '🎉 Initial Commit'"
 
 # Alias for rye
