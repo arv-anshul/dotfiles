@@ -4,8 +4,8 @@
 version: 3
 
 env:
-  MD_BADGES_PY: https://gist.githubusercontent.com/arv-anshul/f4ccfd9258f24ffa9769dfca9b9e091b/raw/067b211b62999f9c5efd1b78a29b9e8d2d589728/md_badges.py
-  PYTHON: python
+  MD_BADGES_PY: https://gist.githubusercontent.com/arv-anshul/f4ccfd9258f24ffa9769dfca9b9e091b/raw/12100d8528480c8a9c76e9f319bd39169de08aae/md_badges.py
+  PYTHON: python3
 
 vars:
   IDE:
