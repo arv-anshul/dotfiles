@@ -50,3 +50,10 @@ tasks:
     desc: Print current week number of the year
     cmd: echo "Current week number is $(date +%V)."
     silent: true
+  brew:
+    desc: Run brew update, cleanup and doctor
+    cmds:
+      - brew update
+      - brew cleanup --prune=all
+      - brew upgrade -n
+      - brew doctor
