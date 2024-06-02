@@ -12,7 +12,6 @@ vars:
     sh: \[ -n "$ZED_TERM" ] && echo 'zed' || echo 'code'
   GLOBAL_PYPROJECT: ~/Developer/pyproject.toml
   GLOBAL_TASKFILE: ~/Developer/Taskfile.yaml
-  PRE_COMMIT_YAML: .pre-commit-config.yaml
 
 tasks:
   default:
@@ -27,13 +26,16 @@ tasks:
     cmd: "{{.IDE}} {{.GLOBAL_TASKFILE}}"
   install-hooks:
     desc: Install pre-commit hooks
-    cmd: pre-commit install --install-hooks -c $PRE_COMMIT_YAML
+    dir: "{{.USER_WORKING_DIR}}"
+    cmd: pre-commit install --install-hooks
   pc:
     desc: Run pre-commit on staged files
-    cmd: pre-commit run -c $PRE_COMMIT_YAML
+    dir: "{{.USER_WORKING_DIR}}"
+    cmd: pre-commit run
   pc-all:
     desc: Run pre-commit on all files
-    cmd: pre-commit run --all-files -c $PRE_COMMIT_YAML
+    dir: "{{.USER_WORKING_DIR}}"
+    cmd: pre-commit run --all-files
   pyproject:
     aliases: [pyp, ppy]
     desc: Open global pyproject.toml in IDE
