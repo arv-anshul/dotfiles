@@ -21,6 +21,7 @@ ${custom.vscode}\
 ${custom.pre-commit}\
 [](fg:arv_custom)
 )
+$cmd_duration
 """
 
 palette = "arv-anshul-color"
@@ -45,6 +46,10 @@ arv_custom = "black"
 format = "$symbol "
 success_symbol = ""
 error_symbol = "[✖](bold italic red)"
+
+[cmd_duration]
+min_time = 100
+format = '[$duration]($style)'
 
 [directory]
 style = "arv_dir"
