@@ -74,24 +74,6 @@ for cask in "${casks[@]}"; do
     fi
 done
 
-# -------------- #
-# Install fonts
-# -------------- #
-fonts=(
-    homebrew/cask-fonts/font-jetbrains-mono-nerd-font
-    homebrew/cask-fonts/font-poppins
-)
-
-# Loop over the `fonts` array to install each font
-for font in "${fonts[@]}"; do
-    if brew list --font | grep -q "^$font\$"; then
-    echo "$font is already installed. Skipping..."
-    else
-        echo "Installing $font..."
-        brew install "$font"
-    fi
-done
-
 # Update and clean up again for safe measure
 brew update
 brew upgrade
