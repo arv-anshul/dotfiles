@@ -10,6 +10,7 @@ alias zshc="code ~/.zshrc"
 alias zshs='source ~/.zshrc'
 alias zx="exit"
 alias zz="clear"
+alias brs="brew services"
 
 # Basic aliases
 alias lsa="ls -lahFG"
