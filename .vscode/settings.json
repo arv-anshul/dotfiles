@@ -1,24 +1,17 @@
 {
-  "[dockerfile]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
-  },
-  "[ignore]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
-  },
   "[json]": {
     "editor.stickyScroll.enabled": true,
     "editor.stickyScroll.maxLineCount": 10,
     "editor.wordWrap": "on"
   },
   "[markdown]": {
-    "editor.fontFamily": "Monaspace Radon, Menlo",
+    "editor.fontFamily": "Rec Mono Casual, Monaspace Radon, Menlo",
     "editor.quickSuggestions": {
       "other": "on"
     },
-    "editor.stickyScroll.enabled": true
-  },
-  "[properties]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
+    "editor.stickyScroll.enabled": true,
+    "prettier.printWidth": 120,
+    "prettier.proseWrap": "always"
   },
   "[python]": {
     "editor.defaultFoldingRangeProvider": "charliermarsh.ruff",
@@ -27,9 +20,6 @@
   "[scminput]": {
     "editor.rulers": [50, 72],
     "editor.wordWrap": "off"
-  },
-  "[shellscript]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
   },
   "[toml]": {
     "editor.defaultFormatter": "tamasfe.even-better-toml"
@@ -47,11 +37,12 @@
   "diffEditor.hideUnchangedRegions.enabled": true,
   "editor.accessibilitySupport": "off",
   "editor.codeActionsOnSave": {
+    "source.addMissingImports": "explicit",
     "source.fixAll": "explicit",
     "source.organizeImports": "explicit"
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.fontFamily": "Menlo, Monaco, Operator Mono Lig, JetBrainsMono Nerd Font, MonoLisa",
+  "editor.fontFamily": "Rec Mono Duotone, Operator Mono Lig, Menlo, JetBrainsMono Nerd Font",
   // "editor.fontLigatures": "'calt', 'liga', 'dlig', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08'",
   "editor.fontLigatures": true,
   "editor.fontSize": 12,
@@ -59,7 +50,7 @@
   "editor.formatOnSave": true,
   "editor.guides.bracketPairs": true,
   "editor.inlineSuggest.suppressSuggestions": true,
-  "editor.letterSpacing": 0.3,
+  "editor.letterSpacing": 0.6,
   "editor.lineHeight": 1.8,
   "editor.minimap.autohide": true,
   "editor.minimap.enabled": false,
@@ -68,7 +59,7 @@
   "editor.mouseWheelZoom": true,
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.renderWhitespace": "all",
-  "editor.rulers": [88, 100],
+  "editor.rulers": [80, 88, 100, 120],
   "editor.semanticHighlighting.enabled": true,
   "editor.snippetSuggestions": "inline",
   "editor.tokenColorCustomizations": {
@@ -127,6 +118,12 @@
           "scope": ["heading.4.markdown"],
           "settings": {
             "foreground": "#808080"
+          }
+        },
+        {
+          "scope": ["markup.underline.link.image.markdown"],
+          "settings": {
+            "foreground": "#B5CEA8"
           }
         }
       ]
@@ -194,12 +191,12 @@
   "extensions.ignoreRecommendations": true,
   "files.associations": {
     "*.env": "properties",
+    "*.md.arv": "markdown",
+    "*.py.arv": "python",
     ".dockerignore": "ignore",
     "requirements-*.lock": "pip-requirements",
     "requirements-*.txt": "pip-requirements",
-    "requirements.lock": "pip-requirements",
-    "*.py.arv": "python",
-    "*.md.arv": "markdown"
+    "requirements.lock": "pip-requirements"
   },
   "files.exclude": {
     "**/.*_cache": true,
@@ -223,9 +220,10 @@
     "*.arv": "vedic"
   },
   "material-icon-theme.folders.associations": {
+    ".venv": "python",
+    "data.arv": "database",
     "docs.arv": "docs",
-    "ml": "robot",
-    ".venv": "python"
+    "ml": "robot"
   },
   "material-icon-theme.hidesExplorerArrows": true,
   "notebook.cellToolbarLocation": {
@@ -262,7 +260,7 @@
   "search.useIgnoreFiles": true,
   "security.workspace.trust.untrustedFiles": "open",
   "telemetry.telemetryLevel": "off",
-  "terminal.integrated.fontFamily": "Monaspace Radon, JetBrainsMono Nerd Font, Menlo",
+  "terminal.integrated.fontFamily": "Rec Mono Duotone, Monaspace Radon, JetBrainsMono Nerd Font, Menlo",
   "terminal.integrated.lineHeight": 1.2,
   "testing.automaticallyOpenPeekView": "never",
   "update.mode": "manual",
