@@ -57,3 +57,18 @@ tasks:
       - brew cleanup --prune=all
       - brew upgrade -n
       - brew doctor
+  setup-project:rye:
+    desc: Setup python any project using uv
+    dir: "{{.USER_WORKING_DIR}}"
+    cmds:
+      - rye init -r requirements.txt {{.CLI_ARGS}}
+      - rye sync
+      - rye fmt
+      - rye lint
+  setup-project:uv:
+    desc: Setup python any project using uv
+    dir: "{{.USER_WORKING_DIR}}"
+    cmds:
+      - uv venv
+      - uv pip install -r requirements.txt
+      # TODO: add ruff format & check here
