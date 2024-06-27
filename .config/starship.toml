@@ -63,9 +63,6 @@ symbol = ""
 [git_status]
 style = "arv_git"
 format = "[( $all_status$ahead_behind)](bold italic bg:$style)[](fg:$style)"
-ahead = "󰑣"
-behind = ""
-modified = ""
 
 [python]
 symbol = "󰌠"
