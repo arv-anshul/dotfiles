@@ -21,35 +21,43 @@ tasks:
       - echo "GitHub   - https://github.com/arv-anshul"
       - echo "LinkedIn - https://linkedin.com/in/arv-anshul"
     silent: true
+
   open:
     desc: Open global Taskfile in IDE
     cmd: "{{.IDE}} {{.GLOBAL_TASKFILE}}"
+
   install-hooks:
     desc: Install pre-commit hooks
     dir: "{{.USER_WORKING_DIR}}"
     cmd: pre-commit install --install-hooks
+
   pc:
     desc: Run pre-commit on staged files
     dir: "{{.USER_WORKING_DIR}}"
     cmd: pre-commit run
+
   pc-all:
     desc: Run pre-commit on all files
     dir: "{{.USER_WORKING_DIR}}"
     cmd: pre-commit run --all-files
+
   pyproject:
     aliases: [pyp, ppy]
     desc: Open global pyproject.toml in IDE
     cmd: "{{.IDE}} {{.GLOBAL_PYPROJECT}}"
+
   badge:
     # task badges -- python,pandas,polars,fastapi
     aliases: [badges]
     desc: CLI tool for simpleicons mardown badges
     cmd: curl -sSL $MD_BADGES_PY | $PYTHON - {{.CLI_ARGS}}
     silent: true
+
   week:
     desc: Print current week number of the year
     cmd: echo "Current week number is $(date +%V)."
     silent: true
+
   brew:
     desc: Run brew update, cleanup and doctor
     cmds:
@@ -57,6 +65,7 @@ tasks:
       - brew cleanup --prune=all
       - brew upgrade -n
       - brew doctor
+
   setup-project:rye:
     desc: Setup python any project using uv
     dir: "{{.USER_WORKING_DIR}}"
@@ -65,6 +74,7 @@ tasks:
       - rye sync
       - rye fmt
       - rye lint
+
   setup-project:uv:
     desc: Setup python any project using uv
     dir: "{{.USER_WORKING_DIR}}"
