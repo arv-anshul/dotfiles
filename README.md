@@ -34,9 +34,10 @@
 
 ### Install Git
 
-- `git` is builtin in mac if `git` is not available in your mac then run `xcode-select --install` this **may** install
-  `git` in your system.
-- Clone this repo using `git` command (You can download this repo too):
+`git` command comes with MacOS, if `git` command is not available in your Mac then run `xcode-select --install` or
+install it manually from its official website.
+
+Then, clone this repo using `git` (one can download this repo too):
 
 ```bash
 git clone https://github.com/arv-anshul/dotfiles.git
@@ -44,7 +45,7 @@ git clone https://github.com/arv-anshul/dotfiles.git
 
 ### Using Bash Script
 
-> \[!CAUTION\]
+> \[!IMPORTANT\]
 >
 > Check [`install.sh`](./install.sh) script before running it.
 
@@ -53,17 +54,19 @@ chmod +x ./install.sh
 ./install.sh
 ```
 
-## Microsoft Office Crack
+## Miscellaneous Stuffs
+
+### Microsoft Office Crack
 
 Download & Install [`serializer`](https://gist.github.com/zthxxx/9ddc171d00df98cbf8b4b0d8469ce90a) and `MS Office 2019`
 from github gist.
 
-## Fonts
+### Fonts
 
-> \[!IMPORTANT\]
+> \[!WARNING\]
 >
-> Do not install fonts using `brew` because it installs all the font variants but you just requires the Regular, Italic
-> and Bold variants only. So install them mannally.
+> Do not install fonts using `brew` because it installs all the font variants but you just requires the **Regular,
+> Italic, Bold and Bold Italic** variants only. So install them mannally.
 
 - [Recursive](https://github.com/arrowtype/recursive/releases/download/v1.085/ArrowType-Recursive-1.085.zip)
   - Rec Mono Casual
