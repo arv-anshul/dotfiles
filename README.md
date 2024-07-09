@@ -37,7 +37,6 @@ own risk.
 - **`install.sh`**: Run this script to install all the required packages and installations. (See
   [**Using Bash Script**](#using-bash-script) section)
 - **`.zshrc`**: Configs for `zsh` cli. (It contains more than that.)
-- **`Makefile`**: Use `make` command to install specific package.
 - **`.aliases`**: Contains important aliases.
 - **`.config/starship.toml`**: Custom config for [starship](https://starship.rs) terminal prompt.
 - **`scripts/macos.sh`**: Modify the settings of macos from terminal.
@@ -55,22 +54,6 @@ own risk.
 git clone https://github.com/arv-anshul/dotfiles.git
 ```
 
-### Using Makefile
-
-- List all **`make`** commands using:
-
-```bash
-make help
-```
-
-- Then, run only required one in your system to install specific package.
-
-```bash
-# Example:
-make brew  # Install brew
-make spotify-mod  # Install SPOT-X for spotify
-```
-
 ### Using Bash Script
 
 > \[!CAUTION\]
@@ -80,14 +63,6 @@ make spotify-mod  # Install SPOT-X for spotify
 ```bash
 chmod +x ./install.sh
 ./install.sh
-```
-
-**-------- OR --------**
-
-Run `install.sh` script using `make` command
-
-```bash
-make install
 ```
 
 ## Microsoft Office Crack
