@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Custom Alias of @arv-anshul
+alias act="source .venv/bin/activate"
 alias cls="clear"
 alias dev="cd ~/Developer"
 alias dk="docker"
@@ -37,11 +38,9 @@ alias gs="git status"
 alias gss="git status -s"
 alias gc="git commit"
 alias gsw="git switch"
-alias git-init-commit="git init && git commit --allow-empty -m '🎉 Initial Commit'"
 
 # Alias for rye
 alias rsyn="rye sync --no-dev"
-alias rye-init="rye init --no-readme --no-pin"
 alias ryn="rye run"
 
 function pycls() {
