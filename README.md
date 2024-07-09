@@ -1,36 +1,11 @@
 # arv-anshul/dotfiles
 
-<details>
-<summary>😱 Important Note Before Installation</summary>
-
-> 📋 Copied from
-> [**@CoreyMSchafer/dotfiles**](https://github.com/CoreyMSchafer/dotfiles/blob/17dff1bbd8d6e4909800e163c16f6991f9fcc68d/README.md?plain=1#L17-L31)
-
-The configurations and scripts in this repository are **HIGHLY PERSONALIZED** to my own preferences and workflows. If
-you decide to use them, please be aware that they will **MODIFY** your current system, potentially making some changes
-that are **IRREVERSIBLE** without a fresh installation of your operating system.
-
-Furthermore, while I strive to backup files wherever possible, I cannot guarantee that all files are backed up. The
-backup mechanism is designed to backup SOME files **ONCE**. If the script is run more than once, the initial backups
-will be **OVERWRITTEN**, potentially resulting in loss of data. While I could implement timestamped backups to preserve
-multiple versions, this setup is optimized for my personal use, and a single backup suffices for me.
-
-If you would like a development environment similar to mine, I highly encourage you to fork this repository and make
-your own personalized changes to these scripts instead of running them exactly as I have them written for myself.
-
-A less serious (but potentially annoying) change it will make is setting the Desktop background to the image I use in my
-tutorials. This is the script I use to set up machines I will be recording on, after all.
-
-I likely won't accept pull requests unless they align closely with my personal preferences and the way I use my
-development environment. But if there are some obvious errors in my scripts then corrections would be welcome!
-
-If you choose to run these scripts, please do so with **EXTREME CAUTION**. It's recommended to review the scripts and
-understand the changes they will make to your system before proceeding.
-
-By using these scripts, you acknowledge and accept the risk of potential data loss or system alteration. Proceed at your
-own risk.
-
-</details>
+> \[!CAUTION\]
+>
+> This repository contains my personal development environment setup. Running these scripts will modify your system,
+> potentially causing irreversible changes. Backups may not be complete and could overwrite existing data. **Forking the
+> repository and making your own adjustments is highly recommended.** Use these scripts with extreme caution and
+> understand the potential risks involved.
 
 ## Files Description
 
