@@ -29,23 +29,23 @@ BACKUP_DIR="${HOME}/.backup"
 mkdir $BACKUP_DIR
 for file in "${files[@]}"; do
     echo "Creating backup of $file in $BACKUP_DIR."
-    if [-f "${HOME}/$file" ]; then
-        mv $file $BACKUP_DIR
+    if [ -f "$HOME/$file" ]; then
+        mv "$HOME/$file" $BACKUP_DIR
     fi
 done
 
 # Create symlinks (will overwrite old dotfiles)
 for file in "${files[@]}"; do
     echo "Creating symlink to $file in home directory."
-    ln -sf "$(pwd)/${file}" "${HOME}/.${file}"
+    ln -sf "$(pwd)/$file" "$HOME/$file"
 done
 
 # Create `~/.config` dir (if not exists)
-if [ ! -d "~/.config" ]; then mkdir "~/.config"; fi
+if [ ! -d "~/.config" ]; then mkdir ~/.config; fi
 
 # Create symlink of some config files to their location
 links=(
-    "$(pwd)/.config/starship.toml ${HOME}/.config/starship.toml"
+    "$(pwd)/.config/starship.toml $HOME/.config/starship.toml"
 )
 
 for link in "${links[@]}"; do
@@ -53,8 +53,8 @@ for link in "${links[@]}"; do
 
     # Check if the source file exists
     if [ -e "$source_path" ]; then
+        echo "Creating symlink: '$destination_path' -> '$source_path'"
         /bin/ln -s "$source_path" "$destination_path"
-        echo "Created link: $destination_path -> $source_path"
     else
         echo "Source file does not exist: $source_path"
     fi
@@ -62,7 +62,7 @@ done
 
 # Run all scripts from `scripts/` directory
 for script in scripts/*; do
-    echo "Running ./$script"
+    ask "Want to run './$script' script?"
     ./$script
 done
 

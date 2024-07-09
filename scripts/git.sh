@@ -2,7 +2,7 @@
 
 # COPIED: https://github.com/CoreyMSchafer/dotfiles/blob/17dff1bbd8d6e4909800e163c16f6991f9fcc68d/brew.sh#L58-L68
 
-if ! command -v git &>/dev/null; then
+if type git &>/dev/null; then
     # Git config name
     echo "Please enter your FULL NAME for Git configuration:"
     read git_user_name
