@@ -51,12 +51,17 @@ done
 
 echo "Installing optional brew formula or cask!"
 optional_brew=(
-    rye  # For python package management
-    arc  # Browser
-    obisidian  # Note taking
-    visual-studio-code  # Code editor
-    vlc  # Media player
-    zed  # Code editor
+    arc
+    bat
+    docker
+    go-task
+    raycast
+    rye
+    stats
+    tree
+    visual-studio-code
+    vlc
+    zed
 )
 
 for item in "${optional_brew[@]}"; do
