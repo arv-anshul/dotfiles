@@ -29,13 +29,9 @@ brew upgrade
 brew upgrade --cask
 brew cleanup
 
-# Define formulas, casks, fonts, etc. as array
-
-# ----------------- #
-# Install formulas
-# ----------------- #
-formulas=(
-    rye  # For python package management
+# Install required and optional formaulas and cask using brew
+echo "Installing required brew formula or cask!"
+required_brew=(
     starship  # Terminal prompt customization
     zsh-autosuggestions  # zsh plugin
     zsh-completions  # zsh plugin
@@ -44,19 +40,18 @@ formulas=(
 )
 
 # Loop over the `formulas` array to install each formula
-for formula in "${formulas[@]}"; do
-    if brew list --formula | grep -q "^$formula\$"; then
-    echo "$formula is already installed. Skipping..."
+for item in "${required_brew[@]}"; do
+    if brew list | grep -q "^$item\$"; then
+        echo "$item is already installed. Skipping..."
     else
-        echo "Installing $formula..."
-        brew install "$formula"
+        echo "Installing $item..."
+        brew install "$item"
     fi
 done
 
-# -------------- #
-# Install casks
-# -------------- #
-casks=(
+echo "Installing optional brew formula or cask!"
+optional_brew=(
+    rye  # For python package management
     arc  # Browser
     obisidian  # Note taking
     visual-studio-code  # Code editor
@@ -64,13 +59,19 @@ casks=(
     zed  # Code editor
 )
 
-# Loop over the `casks` array to install each cask
-for cask in "${casks[@]}"; do
-    if brew list --cask | grep -q "^$cask\$"; then
-    echo "$cask is already installed. Skipping..."
+for item in "${optional_brew[@]}"; do
+  # Check if item is already installed
+    if brew list | grep -q "^$item\$"; then
+        echo "$item is already installed. Skipping..."
     else
-        echo "Installing $cask..."
-        brew install --cask "$cask"
+        # Ask for confirmation before installing
+        read -r -p "Install $item? (y/N) " response
+        if [[ $response =~ ^[Yy]$ ]]; then
+            echo "Installing $item..."
+            brew install "$item"
+        else
+            echo "Skipping $item installation."
+        fi
     fi
 done
 
