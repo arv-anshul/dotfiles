@@ -25,3 +25,5 @@ eval "$(starship init zsh)"
 # Rye: Python package manager
 source $HOME/.rye/env
 eval "$(rye self completion -s zsh)"
+
+export PATH=$HOME/.cargo/bin:$PATH
