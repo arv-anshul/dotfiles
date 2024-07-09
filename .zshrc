@@ -20,10 +20,14 @@ if type brew &>/dev/null; then
 fi
 
 # Starship: Shell Prompt
-eval "$(starship init zsh)"
+if type starship &>/dev/null; then
+    eval "$(starship init zsh)"
+fi
 
 # Rye: Python package manager
-source $HOME/.rye/env
-eval "$(rye self completion -s zsh)"
+if [ -e "$HOME/.rye/env" ]; then
+    source $HOME/.rye/env
+    eval "$(rye self completion -s zsh)"
+fi
 
 export PATH=$HOME/.cargo/bin:$PATH
