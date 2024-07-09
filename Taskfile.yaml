@@ -20,6 +20,8 @@ tasks:
       - echo "Hello, I am Anshul and I'm a Data Scientist."
       - echo "GitHub   - https://github.com/arv-anshul"
       - echo "LinkedIn - https://linkedin.com/in/arv-anshul"
+      - echo
+      - task -a
     silent: true
 
   open:
