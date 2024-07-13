@@ -7,6 +7,7 @@ alias dev="cd ~/Developer"
 alias dk="docker"
 alias dkc="docker-compose"
 alias dtask="task -d ~/Developer/dotfiles"
+alias flushdns="sudo killall -HUP mDNSResponder; dscacheutil -flushcache;"
 alias zshc="code ~/.zshrc"
 alias zshs='source ~/.zshrc'
 alias zx="exit"
@@ -60,4 +61,9 @@ function colormap() {
         [[ $((i % 10)) -eq 0 ]] && echo
     done
     return 0
+}
+
+function rm-cache() {
+    rm -rf "~/Library/Caches/*"
+    rm -rf "~/Library/Application\ Support/*/Caches/*"
 }
