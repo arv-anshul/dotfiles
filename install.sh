@@ -63,7 +63,11 @@ done
 # Run all scripts from `scripts/` directory
 for script in scripts/*; do
     ask "Want to run './$script' script?"
-    ./$script
+    if [ $? == 0 ]; then
+        ./$script
+    else
+        echo "Skipping './$script' script."
+    fi
 done
 
 echo "Installation Complete!"
