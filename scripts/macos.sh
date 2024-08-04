@@ -7,33 +7,40 @@ osascript -e 'tell application "System Preferences" to quit'
 # Ask for the administrator password upfront
 sudo -v
 
-# Disable the sound effects on boot
+###############################################################################
+# General Settings                                                            #
+###############################################################################
+
+# Sound: Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
 sudo nvram StartupMute=%01
 
-# use TAB KEY on keyboard navigation to move focus between controls
+# Keyborad: use TAB KEY on keyboard navigation to move focus between controls
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
 # Trackpad: enable tap to click for this user and for the login screen
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
-# Menu bar: show battery percentage
+# MenuBar: show battery percentage
 defaults write com.apple.menuextra.battery ShowPercent YES
 
 # Trackpad: swipe between pages with three fingers
 defaults write NSGlobalDomain AppleEnableSwipeNavigateWithScrolls -bool true
-defaults -currentHost write NSGlobalDomain com.apple.trackpad.threeFingerHorizSwipeGesture -int 1
+defaults write NSGlobalDomain com.apple.trackpad.threeFingerHorizSwipeGesture -int 1
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerHorizSwipeGesture -int 1
-defaults -currentHost write NSGlobalDomain com.apple.trackpad.threeFingerTapGesture -int 2
+defaults write NSGlobalDomain com.apple.trackpad.threeFingerTapGesture -int 2
 
-# Increase sound quality for Bluetooth headphones/headsets
+# Sound: Increase sound quality for Bluetooth headphones/headsets
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
 
-# Save screenshots to the ~/Screenshots folder
+# Screenshots: Save screenshots to the ~/Screenshots folder
 mkdir -p "${SCREENSHOTS_FOLDER}"
 defaults write com.apple.screencapture location -string "${SCREENSHOTS_FOLDER}"
+
+# Display: Disable Font Smoothing
+defaults write -g AppleFontSmoothing -int 0
 
 ###############################################################################
 # Finder                                                                      #
@@ -54,22 +61,22 @@ defaults write com.apple.finder ShowPathbar -bool true
 # Finder: allow text selection in Quick Look
 defaults write com.apple.finder QLEnableTextSelection -bool true
 
-# Keep folders on top when sorting by name
+# Finder: Keep folders on top when sorting by name
 defaults write com.apple.finder _FXSortFoldersFirst -bool true
 
-# Avoid creating .DS_Store files on network or USB volumes
+# Finder: Avoid creating .DS_Store files on network or USB volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
-# Always open everything in Finder's list view.
+# Finder: Always open everything in Finder's list view.
 # Use list view in all Finder windows by default
 # Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
-# Disable the warning before emptying the Trash
+# Finder: Disable the warning before emptying the Trash
 defaults write com.apple.finder WarnOnEmptyTrash -bool false
 
-# Expand the following File Info panes:
+# Finder: Expand the following File Info panes:
 # “General”, “Open with”, and “Sharing & Permissions”
 defaults write com.apple.finder FXInfoPanesExpanded -dict General -bool true OpenWith -bool true Privileges -bool true
 
@@ -77,28 +84,28 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict General -bool true Ope
 # Dock                                                                        #
 ###############################################################################
 
-# Automatically hide and show the Dock
+# Dock: Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
 
-# Reduces automatically hide delay time
+# Dock: Reduces automatically hide delay time
 defaults write com.apple.dock autohide-delay -float 0.1
 
-# Remove dock animation auto-hide delay
+# Dock: Remove dock animation auto-hide delay
 defaults write com.apple.dock autohide-time-modifier -float 0.25
 
-# Don't show recently used applications in the Dock
+# Dock: Don't show recently used applications in the Dock
 defaults write com.Apple.Dock show-recents -bool false
 
-# Place the on the Right Side of the Screen
+# Dock: Place the on the Right Side of the Screen
 defaults write com.apple.dock orientation -string "right"
 
-# Enables the dock magnification
+# Dock: Enables the dock magnification
 defaults write com.apple.dock magnification -bool true
 
-# Dock magnification size
+# Dock: Dock magnification size
 defaults write com.apple.dock largesize -int 128
 
-# App minimze to its icons
+# Dock: App minimze to its icons
 defaults write com.apple.dock minimize-to-application -int 1
 
 ###############################################################################
