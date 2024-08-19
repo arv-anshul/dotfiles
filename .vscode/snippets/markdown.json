@@ -10,10 +10,6 @@
     ],
     "prefix": "details"
   },
-  "github link": {
-    "body": "https://github.com/arv-anshul",
-    "prefix": "gha"
-  },
   "p tag": {
     "body": "<${1:p}${2}>${3:$TM_SELECTED_TEXT}</${1:p}>$0",
     "prefix": "ptag"
@@ -21,5 +17,13 @@
   "img tag": {
     "body": "<img src=\"${1:https://}\" ${2|width,height|}=\"${3:40}px\">",
     "prefix": "img"
+  },
+  "blockquote": {
+    "body": [
+      "> \\[${1|!NOTE,!TIP,!IMPORTANT,!WARNING,!CAUTION|}\\]",
+      "> ",
+      "> $0"
+    ],
+    "prefix": "bq"
   }
 }
