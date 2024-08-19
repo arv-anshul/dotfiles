@@ -3,6 +3,7 @@ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
 # Homebrew
 export PATH=/opt/homebrew/bin:$PATH
 export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_NO_INSTALL_CLEANUP=1
 
 # Aliases: Basic
 source $HOME/.aliases
@@ -30,4 +31,6 @@ if [ -e "$HOME/.rye/env" ]; then
     eval "$(rye self completion -s zsh)"
 fi
 
+# Rust: Configs for rust-lang
 export PATH=$HOME/.cargo/bin:$PATH
+export PATH="/opt/homebrew/opt/rustup/bin:$PATH"
