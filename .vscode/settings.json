@@ -14,23 +14,18 @@
     "prettier.proseWrap": "always"
   },
   "[python]": {
-    "editor.defaultFoldingRangeProvider": "charliermarsh.ruff",
     "editor.defaultFormatter": "charliermarsh.ruff"
   },
   "[scminput]": {
-    "editor.rulers": [50, 72],
-    "editor.wordWrap": "off"
+    "editor.rulers": [50, 72]
   },
   "[toml]": {
     "editor.defaultFormatter": "tamasfe.even-better-toml"
   },
-  "[yaml]": {
-    "editor.wordWrap": "on"
-  },
   "breadcrumbs.enabled": false,
   "cSpell.allowCompoundWords": true,
   "cSpell.enableFiletypes": ["toml"],
-  "cSpell.ignorePaths": ["*.json", "*.csv", "*.ipynb"],
+  "cSpell.ignorePaths": ["*.json", "*.csv"],
   "cSpell.minWordLength": 5,
   "cSpell.userWords": [],
   "debug.terminal.clearBeforeReusing": true,
@@ -52,10 +47,7 @@
   "editor.inlineSuggest.suppressSuggestions": true,
   "editor.letterSpacing": 0.6,
   "editor.lineHeight": 1.8,
-  "editor.minimap.autohide": true,
   "editor.minimap.enabled": false,
-  "editor.minimap.renderCharacters": false,
-  "editor.minimap.showSlider": "always",
   "editor.mouseWheelZoom": true,
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.renderWhitespace": "all",
@@ -121,7 +113,10 @@
           }
         },
         {
-          "scope": ["markup.underline.link.image.markdown"],
+          "scope": [
+            "markup.underline.link.image.markdown",
+            "markup.underline.link.markdown"
+          ],
           "settings": {
             "foreground": "#B5CEA8"
           }
@@ -191,8 +186,6 @@
   "extensions.ignoreRecommendations": true,
   "files.associations": {
     "*.env": "properties",
-    "*.md.arv": "markdown",
-    "*.py.arv": "python",
     ".dockerignore": "ignore",
     "requirements-*.lock": "pip-requirements",
     "requirements-*.txt": "pip-requirements",
@@ -230,13 +223,9 @@
     "default": "left"
   },
   "notebook.cellToolbarVisibility": "hover",
-  "notebook.codeActionsOnSave": {
-    "source.fixAll": "explicit",
-    "source.organizeImports": "explicit"
-  },
   "notebook.diff.ignoreMetadata": true,
   "notebook.diff.ignoreOutputs": true,
-  "notebook.formatOnCellExecution": true,
+  "notebook.formatOnSave.enabled": true,
   "notebook.lineNumbers": "on",
   "notebook.markup.fontSize": 14,
   "notebook.output.fontFamily": "Menlo",
@@ -254,8 +243,7 @@
   "python.analysis.completeFunctionParens": true,
   "python.analysis.typeCheckingMode": "basic",
   "python.languageServer": "Pylance",
-  "ruff.lint.args": ["--extend-unfixable=F401"],
-  "ruff.lint.run": "onSave",
+  "scm.defaultViewMode": "tree",
   "scm.inputFontFamily": "Operator Mono Lig, Menlo",
   "search.useIgnoreFiles": true,
   "security.workspace.trust.untrustedFiles": "open",
@@ -290,14 +278,12 @@
   },
   "workbench.editor.labelFormat": "medium",
   "workbench.editorAssociations": {
-    "*.ipynb": "jupyter-notebook",
-    "*.ipynb.arv": "jupyter-notebook"
+    "*.ipynb": "jupyter-notebook"
   },
   "workbench.iconTheme": "material-icon-theme",
   "workbench.layoutControl.enabled": false,
   "workbench.productIconTheme": "material-product-icons",
   "workbench.settings.editor": "json",
   "workbench.sideBar.location": "right",
-  "workbench.startupEditor": "none",
-  "zenMode.hideLineNumbers": false
+  "workbench.startupEditor": "none"
 }
