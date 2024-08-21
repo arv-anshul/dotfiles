@@ -7,29 +7,6 @@
 > repository and making your own adjustments is highly recommended.** Use these scripts with extreme caution and
 > understand the potential risks involved.
 
-## Files Description
-
-```
-.
-├── README.md                 # read this for instructions to follow and to understand my dotfiles
-├── Taskfile.yaml             # personal @arv-anshul's Taskfile
-├── install.sh                # run this to fully configure your macbook from tip-to-toe
-├── .vscode/                  # files related to VSCode editor
-├── .config/                  # basic config files for macos packages
-    └── starship.toml         # config file for starship prompt (https://starship.rs)
-├── Fonts/                    # contains favorite fonts uses while coding
-├── others/                   # contains various configuration/settings files
-│   ├── Stats-app.plist       # exported settings for "Stats.app" (https://github.com/exelban/stats)
-│   ├── arv-anshul.rayconfig  # exported settings for "raycast.app" (https://raycast.com)
-│   ├── arv-tui.terminal      # macOS's builtin terminal's theme (by @arv-anshul)
-│   └── yt-enhancher.json     # exported settings of "Enhancer for YouTube" browser extension
-└── scripts/                  # contains shell scripts for managing specific aspects of the development environment
-    ├── brew.sh               # manages Homebrew package installations
-    ├── git.sh                # basic git configs setup
-    ├── macos.sh              # configure best-suited macOS settings
-    └── vscode.sh             # configure global VSCode settings
-```
-
 ## How To Use
 
 ### Install Git
