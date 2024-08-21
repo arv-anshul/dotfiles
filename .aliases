@@ -6,17 +6,14 @@ alias cls="clear"
 alias dev="cd ~/Developer"
 alias dk="docker"
 alias dkc="docker-compose"
-alias dtask="task -d ~/Developer/dotfiles"
 alias flushdns="sudo killall -HUP mDNSResponder; dscacheutil -flushcache;"
 alias zshc="code ~/.zshrc"
 alias zshs='source ~/.zshrc'
 alias zx="exit"
-alias zz="clear"
 alias brs="brew services"
 
 # Basic aliases
 alias lsa="ls -lahFG"
-alias ..="cd .."
 alias py="python"
 
 # Alias for GIT
@@ -39,10 +36,6 @@ alias gs="git status"
 alias gss="git status -s"
 alias gc="git commit"
 alias gsw="git switch"
-
-# Alias for rye
-alias rsyn="rye sync --no-dev"
-alias ryn="rye run"
 
 function pycls() {
     find . -name '.DS_Store' -type f -delete

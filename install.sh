@@ -21,7 +21,6 @@ fi
 # List of files/folders to symlink in $HOME
 files=(
     .zshrc
-    .aliases
 )
 
 # Create a backup of dotfiles in a directory
