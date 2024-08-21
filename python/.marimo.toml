@@ -1,0 +1,44 @@
+[server]
+browser = "default"
+follow_symlink = false
+
+[completion]
+copilot = false
+activate_on_typing = false
+
+[save]
+autosave_delay = 5000
+format_on_save = true
+autosave = "after_delay"
+
+[keymap]
+preset = "default"
+
+[keymap.overrides]
+"global.commandPalette" = "Cmd-Shift-p"
+"global.showHelp" = "Cmd-Shift-h"
+"cell.moveDown" = "Ctrl-Alt-arrowdown"
+"cell.moveUp" = "Ctrl-Alt-arrowup"
+"cell.createBelow" = "Cmd-Shift-]"
+"cell.createAbove" = "Cmd-Shift-["
+
+[display]
+code_editor_font_size = 16
+cell_output = "below"
+default_width = "full"
+theme = "dark"
+
+[runtime]
+auto_instantiate = false
+on_cell_change = "lazy"
+auto_reload = "off"
+
+[experimental]
+
+[package_management]
+manager = "uv"
+
+[ai.open_ai]
+
+[formatting]
+line_length = 88

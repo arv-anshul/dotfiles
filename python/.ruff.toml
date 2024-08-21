@@ -1,0 +1,59 @@
+target-version = "py311"
+show-fixes = true
+
+[lint]
+extend-select = [
+    "A",
+    "ARG",
+    "B",
+    "BLE",
+    "C4",
+    "C90",
+    "COM",
+    "E",
+    "EM",
+    "F",
+    "FLY",
+    "FURB",
+    "I",
+    "ICN",
+    "INP",
+    "ISC",
+    "PGH",
+    "PIE",
+    "PL",
+    "PT",
+    "PTH",
+    "PYI",
+    "Q",
+    "RSE",
+    "RUF",
+    "S",
+    "SIM",
+    "SLF",
+    "TCH",
+    "UP",
+    "W",
+    "YTT",
+]
+extend-ignore = [
+    "B008",
+    "B905",
+    "E501",
+    "E741",
+    "EM101",
+    "EM102",
+    "INP001",
+    "ISC001",
+    "N818",
+    "PGH003",
+    "PLE1142",
+    "PLR0913",
+    "PLR2004",
+    "S101",
+    "S301",
+]
+extend-unfixable = ["B", "F401"]
+
+[lint.per-file-ignores]
+"__init__.py" = ["F401", "E402"]
