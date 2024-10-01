@@ -2,10 +2,8 @@
 
 ## How To Sync
 
-### Install [Chezmoi](https://www.chezmoi.io/)
-
-Install chezmoi and the dotfiles from [my GitHub dotfiles repo](https://github.com/arv-anshul/dotfiles) on a new, empty
-machine with a single command:
+Install [chezmoi](https://www.chezmoi.io/) and the dotfiles from
+[my GitHub dotfiles repo](https://github.com/arv-anshul/dotfiles) on a new, empty machine with a single command:
 
 ```bash
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply arv-anshul
