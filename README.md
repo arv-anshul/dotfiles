@@ -1,34 +1,12 @@
 # arv-anshul/dotfiles
 
-> \[!CAUTION\]
->
-> This repository contains my personal development environment setup. Running these scripts will modify your system,
-> potentially causing irreversible changes. Backups may not be complete and could overwrite existing data. **Forking the
-> repository and making your own adjustments is highly recommended.** Use these scripts with extreme caution and
-> understand the potential risks involved.
+## How To Sync
 
-## How To Use
-
-### Install Git
-
-`git` command comes with MacOS, if `git` command is not available in your Mac then run `xcode-select --install` or
-install it manually from its official website.
-
-Then, clone this repo using `git` (one can download this repo too):
+Install [chezmoi](https://www.chezmoi.io/) and the dotfiles from
+[my GitHub dotfiles repo](https://github.com/arv-anshul/dotfiles) on a new, empty machine with a single command:
 
 ```bash
-git clone https://github.com/arv-anshul/dotfiles.git
-```
-
-### Using Bash Script
-
-> \[!IMPORTANT\]
->
-> Check [`install.sh`](./install.sh) script before running it.
-
-```bash
-chmod +x ./install.sh
-./install.sh
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply arv-anshul
 ```
 
 ## Miscellaneous Stuffs
@@ -52,5 +30,5 @@ from github gist.
 - [JetBrains Mono Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip)
 - [Operator Mono Lig](https://github.com/arv-anshul/dotfiles/tree/main/Fonts/OperatorMonoLig)
   - [@willfore](https://github.com/willfore/vscode_operator_mono_lig.git)
-- [MonoLisa](Fonts/MonoLisa)
+- [MonoLisa](others/fonts/MonoLisa)
 - [All Nerd Font List](https://www.nerdfonts.com/font-downloads)

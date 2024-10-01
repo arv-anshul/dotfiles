@@ -3,7 +3,7 @@
 # COPIED: https://github.com/CoreyMSchafer/dotfiles/blob/17dff1bbd8d6e4909800e163c16f6991f9fcc68d/brew.sh
 
 # Install Homebrew if it isn't already installed
-if type brew &>/dev/null; then
+if ! type brew &>/dev/null; then
     echo "Homebrew not installed. Installing Homebrew."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
@@ -18,7 +18,7 @@ else
 fi
 
 # Verify brew is now accessible
-if type brew &>/dev/null; then
+if ! type brew &>/dev/null; then
     echo "Failed to configure Homebrew in PATH. Please add Homebrew to your PATH manually."
     exit 1
 fi
@@ -26,7 +26,6 @@ fi
 # Update Homebrew and Upgrade any already-installed formulae
 brew update
 brew upgrade
-brew upgrade --cask
 brew cleanup
 
 # Install required and optional formaulas and cask using brew
@@ -52,11 +51,8 @@ done
 echo "Installing optional brew formula or cask!"
 optional_brew=(
     arc
-    bat
     docker
-    go-task
     raycast
-    rye
     stats
     tree
     visual-studio-code
@@ -83,5 +79,5 @@ done
 # Update and clean up again for safe measure
 brew update
 brew upgrade
-brew upgrade --cask
-brew cleanup
+brew cleanup --prune=all
+brew doctor

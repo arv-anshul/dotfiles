@@ -28,6 +28,8 @@
   "cSpell.ignorePaths": ["*.json", "*.csv"],
   "cSpell.minWordLength": 5,
   "cSpell.userWords": [],
+  "codeium.aggressiveShutdown": true,
+  "codeium.snoozeTime": 10,
   "debug.terminal.clearBeforeReusing": true,
   "diffEditor.hideUnchangedRegions.enabled": true,
   "editor.accessibilitySupport": "off",
@@ -151,8 +153,6 @@
           "keyword.operator.unpacking.arguments.python",
           "keyword.operator.unpacking.parameter.python",
           "punctuation.definition.block.sequence.item.yaml",
-          "punctuation.definition.inheritance.begin.python",
-          "punctuation.definition.inheritance.end.python",
           "punctuation.definition.list.begin.markdown",
           "punctuation.definition.quote.begin.markdown",
           "punctuation.separator.annotation.python",
@@ -180,6 +180,8 @@
   "emojisense.languages": {
     "*": true
   },
+  "errorLens.exclude": ["\"\\w+\": Unknown word"],
+  "errorLens.excludePatterns": ["*.ipynb"],
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "extensions.autoUpdate": false,
@@ -223,6 +225,11 @@
     "default": "left"
   },
   "notebook.cellToolbarVisibility": "hover",
+  "notebook.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "notebook.defaultFormatter": "charliermarsh.ruff",
   "notebook.diff.ignoreMetadata": true,
   "notebook.diff.ignoreOutputs": true,
   "notebook.formatOnSave.enabled": true,

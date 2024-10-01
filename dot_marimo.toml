@@ -26,11 +26,12 @@ preset = "default"
 code_editor_font_size = 16
 cell_output = "below"
 default_width = "full"
-theme = "dark"
+theme = "system"
+dataframes = "plain"
 
 [runtime]
 auto_instantiate = false
-on_cell_change = "lazy"
+on_cell_change = "autorun"
 auto_reload = "off"
 
 [experimental]
