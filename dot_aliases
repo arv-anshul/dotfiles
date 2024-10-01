@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
-
 # Custom Alias of @arv-anshul
 alias act="source .venv/bin/activate"
 alias brs="brew services"
