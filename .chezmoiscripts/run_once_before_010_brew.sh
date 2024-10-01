@@ -26,7 +26,6 @@ fi
 # Update Homebrew and Upgrade any already-installed formulae
 brew update
 brew upgrade
-brew upgrade --cask
 brew cleanup
 
 # Install required and optional formaulas and cask using brew
@@ -52,11 +51,8 @@ done
 echo "Installing optional brew formula or cask!"
 optional_brew=(
     arc
-    bat
     docker
-    go-task
     raycast
-    rye
     stats
     tree
     visual-studio-code
@@ -83,5 +79,5 @@ done
 # Update and clean up again for safe measure
 brew update
 brew upgrade
-brew upgrade --cask
-brew cleanup
+brew cleanup --prune=all
+brew doctor
