@@ -1,12 +1,14 @@
 # arv-anshul/dotfiles
 
-## How To Sync
-
 Install [chezmoi](https://www.chezmoi.io/) and the dotfiles from
 [my GitHub dotfiles repo](https://github.com/arv-anshul/dotfiles) on a new, empty machine with a single command:
 
 ```bash
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply arv-anshul
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+brew install chezmoi
+chezmoi init --apply arv-anshul
 ```
 
 ## Miscellaneous Stuffs
