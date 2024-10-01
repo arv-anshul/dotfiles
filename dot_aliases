@@ -1,20 +1,19 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+set -euo pipefail
 
 # Custom Alias of @arv-anshul
 alias act="source .venv/bin/activate"
+alias brs="brew services"
 alias cls="clear"
 alias dev="cd ~/Developer"
 alias dk="docker"
 alias dkc="docker-compose"
 alias flushdns="sudo killall -HUP mDNSResponder; dscacheutil -flushcache;"
-alias zshc="code ~/.zshrc"
-alias zshs='source ~/.zshrc'
-alias zx="exit"
-alias brs="brew services"
-
-# Basic aliases
 alias lsa="ls -lahFG"
 alias py="python"
+alias zshs="source ~/.zshrc"
+alias zx="exit"
 
 # Alias for GIT
 alias g="git"
@@ -38,7 +37,7 @@ alias gc="git commit"
 alias gsw="git switch"
 
 function pycls() {
-    find . -name '.DS_Store' -type f -delete
+    find . -name ".DS_Store" -type f -delete
     find . -type d -name "__pycache__" -exec rm -rfv {} \; 2>/dev/null
     find . -type d -name ".ipynb_checkpoints" -exec rm -rfv {} \; 2>/dev/null
     find . -type d -name ".ruff_cache" -exec rm -rfv {} \; 2>/dev/null
@@ -54,9 +53,4 @@ function colormap() {
         [[ $((i % 10)) -eq 0 ]] && echo
     done
     return 0
-}
-
-function rm-cache() {
-    rm -rf "~/Library/Caches/*"
-    rm -rf "~/Library/Application\ Support/*/Caches/*"
 }
