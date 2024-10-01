@@ -1,5 +1,4 @@
-# path to `dotfiles` directory
-export DOTFILES="$HOME/Developer/dotfiles"
+#!/bin/bash
 
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
 
@@ -8,8 +7,8 @@ export PATH=/opt/homebrew/bin:$PATH
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_INSTALL_CLEANUP=1
 
-# Aliases: Basic
-source $DOTFILES/.aliases
+# Basic aliases
+source $HOME/.aliases
 
 # ZSH: Basic Plugins
 source /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh
@@ -19,6 +18,7 @@ source /opt/homebrew/opt/zsh-fast-syntax-highlighting/share/zsh-fast-syntax-high
 ## zsh-completions
 if type brew &>/dev/null; then
     FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+    FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
     autoload -Uz compinit
     compinit
 fi
@@ -37,5 +37,8 @@ if [ -e "$HOME/.cargo/bin/uv" ]; then
     eval "$(uv generate-shell-completion zsh)"
 fi
 
+# uv tools installed here
+export PATH=~/.local/bin:$PATH
+
 # ruff: formating and linting tool for python
-RUFF_NO_CACHE="1"
+export RUFF_NO_CACHE="true"
