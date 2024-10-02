@@ -43,6 +43,10 @@ casks+=(
     stats  # system monitor in the menu bar
 )
 
+# Unless HOMEBREW_NO_INSTALL_UPGRADE is set, brew install formula will
+# upgrade formula if it is already installed but outdated.
+export HOMEBREW_NO_INSTALL_UPGRADE="true"
+
 # install all the packages
 brew install ${packages[@]}
 brew install --cask ${casks[@]}
