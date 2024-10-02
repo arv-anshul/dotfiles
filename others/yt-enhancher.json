@@ -1,5 +1,5 @@
 {
-  "version": "2.0.123",
+  "version": "2.0.126.1",
   "settings": {
     "blur": 0,
     "brightness": 63,
@@ -87,13 +87,13 @@
     "selectquality": true,
     "selectqualityfullscreenoff": false,
     "selectqualityfullscreenon": false,
-    "speed": 1.25,
+    "speed": 1.5,
     "speedvariation": 0.1,
     "stopvideos": false,
     "theatermode": true,
     "theme": "default-dark",
     "themevariant": "youtube-deep-dark.css",
-    "update": 1710339862971,
+    "update": 1717770629910,
     "volume": 50,
     "volumemultiplier": 3,
     "volumevariation": 5,
