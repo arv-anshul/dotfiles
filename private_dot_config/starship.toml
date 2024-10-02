@@ -53,7 +53,7 @@ format = '[$duration]($style)'
 
 [directory]
 style = "arv_dir"
-format = "[](fg:$style)[$path](bold bg:$style)[](fg:$style)"
+format = "[](fg:$style)[$path](bg:$style)[](fg:$style)"
 
 [git_branch]
 style = "arv_git"
