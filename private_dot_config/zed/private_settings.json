@@ -1,0 +1,127 @@
+{
+  "indent_guides": {
+    "active_line_width": 2,
+    "coloring": "indent_aware"
+  },
+  "auto_update_extensions": {
+    "rust-analyzer": false,
+    "json-language-server": false
+  },
+  "multi_cursor_modifier": "cmd_or_ctrl",
+  "always_treat_brackets_as_autoclosed": true,
+  "assistant": {
+    "button": false,
+    "version": "2"
+  },
+  "auto_update": false,
+  "buffer_font_family": "MD IO 0.4",
+  "buffer_font_size": 16,
+  "chat_panel": {
+    "button": false
+  },
+  "collaboration_panel": {
+    "button": false
+  },
+  "experimental.theme_overrides": {
+    "modified": "#569CD6",
+    "editor.wrap_guide": "#FFF2",
+    "syntax": {
+      "punctuation.bracket": {
+        "color": "#FFEE4A"
+      },
+      "keyword": {
+        "font_style": "italic"
+      }
+    },
+    "tab.active_background": "#33A6"
+  },
+  "extend_comment_on_newline": false,
+  "features": {
+    "chat": false,
+    "copilot": false
+  },
+  "file_scan_exclusions": [
+    "**/.DS_Store",
+    "**/.git",
+    "**/.venv",
+    "**/__pycache__",
+    "**/target"
+  ],
+  "inlay_hints": {
+    "enabled": true
+  },
+  "journal": {
+    "hour_format": "hour24"
+  },
+  "languages": {
+    "JSON": {
+      "soft_wrap": "editor_width"
+    },
+    "Markdown": {
+      "soft_wrap": "editor_width"
+    },
+    "CSS": {
+      "tab_size": 2
+    },
+    "Python": {
+      "formatter": [
+        {
+          "code_actions": {
+            "source.organizeImports.ruff": true,
+            "source.fixAll.ruff": true
+          }
+        },
+        {
+          "language_server": {
+            "name": "ruff"
+          }
+        }
+      ],
+      "language_servers": ["basedpyright", "ruff", "!pyright"],
+      "inlay_hints": {
+        "enabled": false
+      }
+    },
+    "YAML": {
+      "soft_wrap": "editor_width"
+    }
+  },
+  "lsp": {
+    "basedpyright": {
+      "settings": {
+        "basedpyright.analysis": {
+          "diagnosticMode": "workspace",
+          "typeCheckingMode": "standard"
+        },
+        "python": {
+          "pythonPath": ".venv/bin/python"
+        }
+      }
+    }
+  },
+  "format_on_save": "on",
+  "project_panel": {
+    "dock": "right"
+  },
+  "scrollbar": {
+    "show": "always"
+  },
+  "show_whitespaces": "all",
+  "tabs": {
+    "git_status": true,
+    "file_icons": true
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "terminal": {
+    "font_size": 14,
+    "font_fallbacks": ["JetBrainsMono Nerd Font"]
+  },
+  "font_fallbacks": ["JetBrainsMono Nerd Font"],
+  "theme": "VSCode Dark Modern",
+  "ui_font_family": "MD IO 0.4",
+  "ui_font_size": 18,
+  "wrap_guides": [80, 88, 100, 120]
+}
