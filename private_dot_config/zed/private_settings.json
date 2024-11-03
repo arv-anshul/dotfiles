@@ -3,9 +3,9 @@
     "active_line_width": 2,
     "coloring": "indent_aware"
   },
-  "auto_update_extensions": {
-    "rust-analyzer": false,
-    "json-language-server": false
+  "toolbar": {
+    "breadcrumbs": false,
+    "quick_actions": false
   },
   "multi_cursor_modifier": "cmd_or_ctrl",
   "always_treat_brackets_as_autoclosed": true,
@@ -30,6 +30,9 @@
         "color": "#FFEE4A"
       },
       "keyword": {
+        "font_style": "italic"
+      },
+      "comment": {
         "font_style": "italic"
       }
     },

@@ -39,7 +39,7 @@
     "source.organizeImports": "explicit"
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.fontFamily": "Rec Mono Duotone, Operator Mono Lig, Menlo, JetBrainsMono Nerd Font",
+  "editor.fontFamily": "'MD IO 0.4', Menlo, Rec Mono Duotone, Operator Mono Lig, JetBrainsMono Nerd Font",
   // "editor.fontLigatures": "'calt', 'liga', 'dlig', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08'",
   "editor.fontLigatures": true,
   "editor.fontSize": 12,
@@ -191,7 +191,8 @@
     ".dockerignore": "ignore",
     "requirements-*.lock": "pip-requirements",
     "requirements-*.txt": "pip-requirements",
-    "requirements.lock": "pip-requirements"
+    "requirements.lock": "pip-requirements",
+    "uv.lock": "toml"
   },
   "files.exclude": {
     "**/.*_cache": true,
@@ -292,5 +293,8 @@
   "workbench.productIconTheme": "material-product-icons",
   "workbench.settings.editor": "json",
   "workbench.sideBar.location": "right",
-  "workbench.startupEditor": "none"
+  "workbench.startupEditor": "none",
+  "codeium.enableConfig": {
+    "*": false
+  }
 }
