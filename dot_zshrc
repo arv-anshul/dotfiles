@@ -33,12 +33,11 @@ export PATH="/opt/homebrew/opt/rustup/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # uv: python package manager
-if [ -e "$HOME/.cargo/bin/uv" ]; then
+export PATH="$HOME/.local/bin:$PATH"
+
+if [ -e "$HOME/.local/bin/uv" ]; then
     eval "$(uv generate-shell-completion zsh)"
 fi
-
-# uv tools installed here
-export PATH=~/.local/bin:$PATH
 
 # ruff: formating and linting tool for python
 export RUFF_NO_CACHE="true"
