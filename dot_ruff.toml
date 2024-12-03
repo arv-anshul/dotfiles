@@ -1,5 +1,4 @@
 target-version = "py311"
-show-fixes = true
 
 [lint]
 extend-select = [
@@ -31,7 +30,7 @@ extend-select = [
     "S",
     "SIM",
     "SLF",
-    "TCH",
+    "TC",
     "UP",
     "W",
     "YTT",
