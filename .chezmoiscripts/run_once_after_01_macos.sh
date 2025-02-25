@@ -1,4 +1,4 @@
-#! /bin/zsh
+#! /usr/bin/env bash
 
 SCREENSHOTS_FOLDER="${HOME}/Pictures/Screenshots"
 

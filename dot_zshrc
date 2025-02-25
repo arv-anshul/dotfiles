@@ -11,9 +11,9 @@ export HOMEBREW_NO_INSTALL_CLEANUP=1
 source $HOME/.config/.aliases
 
 # ZSH: Basic Plugins
-source /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /opt/homebrew/opt/zsh-fast-syntax-highlighting/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source "$(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh"
+source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source "$(brew --prefix)/opt/zsh-fast-syntax-highlighting/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
 
 ## zsh-completions
 if type brew &>/dev/null; then
@@ -28,16 +28,11 @@ if type starship &>/dev/null; then
     eval "$(starship init zsh)"
 fi
 
-# sync rust and cargo bins
-export PATH="/opt/homebrew/opt/rustup/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
+# Third party commands must be written in "$HOME/.zshrc.local"
+ZSHRC_LOCAL="$HOME/.zshrc.local"
 
-# uv: python package manager
-export PATH="$HOME/.local/bin:$PATH"
-
-if [ -e "$HOME/.local/bin/uv" ]; then
-    eval "$(uv generate-shell-completion zsh)"
+if [ -e "$ZSHRC_LOCAL" ]; then
+    source "$ZSHRC_LOCAL"
+else
+    echo "Missing $ZSHRC_LOCAL"
 fi
-
-# ruff: formating and linting tool for python
-export RUFF_NO_CACHE="true"
