@@ -1,77 +1,72 @@
 {
-  "indent_guides": {
-    "active_line_width": 2,
-    "coloring": "indent_aware"
-  },
-  "toolbar": {
-    "breadcrumbs": false,
-    "quick_actions": false
-  },
-  "multi_cursor_modifier": "cmd_or_ctrl",
   "always_treat_brackets_as_autoclosed": true,
   "assistant": {
     "button": false,
+    "default_model": {
+      "model": "qwen2.5-coder:3b",
+      "provider": "ollama"
+    },
     "version": "2"
   },
   "auto_update": false,
   "buffer_font_family": "MD IO 0.4",
-  "buffer_font_size": 16,
+  "buffer_font_size": 16.0,
   "chat_panel": {
-    "button": false
+    "button": "when_in_call"
   },
   "collaboration_panel": {
     "button": false
   },
   "experimental.theme_overrides": {
-    "modified": "#569CD6",
     "editor.wrap_guide": "#FFF2",
-    "syntax": {
-      "punctuation.bracket": {
-        "color": "#FFEE4A"
-      },
-      "keyword": {
-        "font_style": "italic"
-      },
-      "comment": {
-        "font_style": "italic"
-      }
-    },
     "tab.active_background": "#33A6"
   },
   "extend_comment_on_newline": false,
   "features": {
     "chat": false,
-    "copilot": false
+    "copilot": false,
+    "notebooks": true
   },
   "file_scan_exclusions": [
     "**/.DS_Store",
     "**/.git",
     "**/.venv",
-    "**/__pycache__",
-    "**/target"
+    "**/__pycache__"
   ],
+  "font_fallbacks": ["JetBrainsMono Nerd Font"],
+  "format_on_save": "on",
+  "icon_theme": "Material Icon Theme",
+  "indent_guides": {
+    "active_line_width": 2,
+    "coloring": "indent_aware"
+  },
   "inlay_hints": {
     "enabled": true
   },
   "journal": {
     "hour_format": "hour24"
   },
+  "language_models": {
+    "ollama": {
+      "api_url": "http://localhost:11434"
+    }
+  },
   "languages": {
+    "CSS": {
+      "tab_size": 2
+    },
     "JSON": {
       "soft_wrap": "editor_width"
     },
     "Markdown": {
       "soft_wrap": "editor_width"
     },
-    "CSS": {
-      "tab_size": 2
-    },
     "Python": {
       "formatter": [
         {
           "code_actions": {
-            "source.organizeImports.ruff": true,
-            "source.fixAll.ruff": true
+            "source.fixAll.ruff": true,
+            "source.organizeImports.ruff": true
           }
         },
         {
@@ -80,10 +75,10 @@
           }
         }
       ],
-      "language_servers": ["basedpyright", "ruff", "!pyright"],
       "inlay_hints": {
         "enabled": false
-      }
+      },
+      "language_servers": ["basedpyright", "ruff", "!pyright"]
     },
     "YAML": {
       "soft_wrap": "editor_width"
@@ -93,7 +88,6 @@
     "basedpyright": {
       "settings": {
         "basedpyright.analysis": {
-          "diagnosticMode": "workspace",
           "typeCheckingMode": "standard"
         },
         "python": {
@@ -102,7 +96,7 @@
       }
     }
   },
-  "format_on_save": "on",
+  "multi_cursor_modifier": "cmd_or_ctrl",
   "project_panel": {
     "dock": "right"
   },
@@ -111,20 +105,19 @@
   },
   "show_whitespaces": "all",
   "tabs": {
-    "git_status": true,
-    "file_icons": true
+    "file_icons": true,
+    "git_status": true
   },
   "telemetry": {
     "diagnostics": false,
     "metrics": false
   },
   "terminal": {
-    "font_size": 14,
-    "font_fallbacks": ["JetBrainsMono Nerd Font"]
+    "font_fallbacks": ["JetBrainsMono Nerd Font"],
+    "font_size": 14
   },
-  "font_fallbacks": ["JetBrainsMono Nerd Font"],
-  "theme": "VSCode Dark Modern",
-  "ui_font_family": "MD IO 0.4",
-  "ui_font_size": 18,
+  "theme": "ARV VSCode",
+  "ui_font_family": "Rec Mono Duotone",
+  "ui_font_size": 17,
   "wrap_guides": [80, 88, 100, 120]
 }
