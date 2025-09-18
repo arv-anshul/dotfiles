@@ -19,11 +19,7 @@ alias gb="git branch"
 alias gch="git checkout"
 alias gcm="git checkout main"
 alias gd="git diff"
-alias gf="git fetch origin"
-alias gfa="git fetch --all"
 alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches"
-alias gpull="git pull"
-alias gpush="git push"
 alias gra="git remote add"
 alias grf="git reflog"
 alias grv="git remote -v"
@@ -36,14 +32,6 @@ alias gsw="git switch"
 function loadenv() {
     local filePath="${1:-.env}"
     [ -f "$filePath" ] && export $(grep -v '^#' "$filePath" | xargs)
-}
-
-function pycls() {
-    find . -maxdepth 5 -type f -name ".DS_Store" -delete
-    find . -maxdepth 5 -type d -name ".venv" -prune -o -type d -name "__pycache__" -exec rm -rfv {} \; 2>/dev/null
-    find . -maxdepth 5 -type d -name ".ipynb_checkpoints" -exec rm -rfv {} \; 2>/dev/null
-    find . -maxdepth 5 -type d -name ".ruff_cache" -exec rm -rfv {} \; 2>/dev/null
-    find . -maxdepth 5 -type d -name ".venv" -prune -o -type f -name "*.pyc" -exec rm -fv {} \; 2>/dev/null
 }
 
 function colormap() {

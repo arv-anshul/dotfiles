@@ -3,7 +3,6 @@ browser = "default"
 follow_symlink = false
 
 [completion]
-copilot = false
 activate_on_typing = false
 
 [save]
@@ -17,10 +16,6 @@ preset = "default"
 [keymap.overrides]
 "global.commandPalette" = "Cmd-Shift-p"
 "global.showHelp" = "Cmd-Shift-h"
-"cell.moveDown" = "Ctrl-Alt-arrowdown"
-"cell.moveUp" = "Ctrl-Alt-arrowup"
-"cell.createBelow" = "Cmd-Shift-]"
-"cell.createAbove" = "Cmd-Shift-["
 
 [display]
 code_editor_font_size = 16
@@ -39,7 +34,8 @@ auto_reload = "off"
 [package_management]
 manager = "uv"
 
-[ai.open_ai]
-
 [formatting]
 line_length = 88
+
+[snippets]
+include_default_snippets = false

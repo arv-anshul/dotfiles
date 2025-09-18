@@ -1,30 +1,18 @@
 [
   {
-    "context": "Editor",
+    "context": "",
     "bindings": {
-      "ctrl-`": "terminal_panel::ToggleFocus",
-      "alt-d": "editor::DuplicateLineDown"
+      "alt-d": "editor::DuplicateLineDown",
+      "cmd-ctrl-g": "git_panel::ToggleFocus"
     }
   },
-  // {
-  //   "context": "ProjectPanel",
-  //   "bindings": {
-  //     "cmd-w": "pane::CloseActiveItem"
-  //   }
-  // },
   {
     "context": "Workspace",
     "bindings": {
       "alt-cmd-p": ["projects::OpenRecent", { "create_new_window": false }],
       "cmd-b": "workspace::ToggleRightDock",
       "cmd-r": null,
-      "cmd-shift-b": "workspace::ToggleLeftDock"
-    }
-  },
-  {
-    "context": "Terminal",
-    "bindings": {
-      "ctrl-`": "workspace::ToggleBottomDock"
+      "cmd-alt-b": "workspace::ToggleLeftDock"
     }
   }
 ]

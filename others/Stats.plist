@@ -120,44 +120,44 @@
 	<true/>
 	<key>NSOSPLastRootDirectory</key>
 	<data>
-	Ym9vazgDAAAAAAQQMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAIA
-	AAQAAAADAwAAAAQAAAUAAAABAQAAVXNlcnMAAAAEAAAAAQEAAGlhcnYJAAAAAQEAAERl
-	dmVsb3BlcgAAAAgAAAABAQAAZG90ZmlsZXMGAAAAAQEAAG90aGVycwAAFAAAAAEGAAAQ
-	AAAAIAAAACwAAABAAAAAUAAAAAgAAAAEAwAAHF0AAAAAAAAIAAAABAMAAC6EAAAAAAAA
-	CAAAAAQDAAAMRHQBAAAAAAgAAAAEAwAAU+bUAQAAAAAIAAAABAMAAK3m1AEAAAAAFAAA
-	AAEGAAB8AAAAjAAAAJwAAACsAAAAvAAAAAgAAAAABAAAQcW4l/X2yEUYAAAAAQIAAAIA
-	AAAAAAAAHwIAAAAAAAAfAgAAAAAAAAAAAAABBQAACAAAAAQDAAADAAAAAAAAAAQAAAAD
-	AwAA9QEAAAgAAAABCQAAZmlsZTovLy8MAAAAAQEAAE1hY2ludG9zaCBIRAgAAAAEAwAA
-	AACHETkAAAAIAAAAAAQAAEHGRSj8gAAAJAAAAAEBAABFQTgxMUU0Ni00OTIxLTRBRTAt
-	QUU0QS0zQ0VCREQzMkMzQzkYAAAAAQIAAIEAAAABAAAA7xMAAAEAAADvEwAAAQAAAAEA
-	AAABAQAALwAAADAAAAABAgAAZG5pYgAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-	AAAAcmRsZgIAAAAAAAAA8AAAAP7///8BAAAAAAAAABMAAAAEEAAAYAAAAAAAAAAFEAAA
-	zAAAAAAAAAAQEAAA+AAAAAAAAABAEAAA6AAAAAAAAAACIAAAzAEAAAAAAAAFIAAAPAEA
-	AAAAAAAQIAAATAEAAAAAAAARIAAAgAEAAAAAAAASIAAAYAEAAAAAAAATIAAAcAEAAAAA
-	AAAgIAAArAEAAAAAAAAwIAAAGAEAAAAAAAABwAAAIAEAAAAAAAARwAAAIAAAAAAAAAAS
-	wAAAMAEAAAAAAAAB0AAAGAEAAAAAAAAQ0AAABAAAAAAAAAAX8AAAUAAAAAAAAAAi8AAA
-	2AEAAAAAAAA=
+	Ym9va1wDAAAAAAQQMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANAIA
+	AAQAAAADAwAAAAQAAAUAAAABAQAAVXNlcnMAAAAEAAAAAQEAAGlhcnYGAAAAAQEAAC5s
+	b2NhbAAABQAAAAEBAABzaGFyZQAAAAcAAAABAQAAY2hlem1vaQAGAAAAAQEAAG90aGVy
+	cwAAGAAAAAEGAAAQAAAAIAAAACwAAAA8AAAATAAAAFwAAAAIAAAABAMAABxdAAAAAAAA
+	CAAAAAQDAAAuhAAAAAAAAAgAAAAEAwAADeXQAgAAAAAIAAAABAMAAHEK/wIAAAAACAAA
+	AAQDAADLkf8CAAAAAAgAAAAEAwAAGpL/AgAAAAAYAAAAAQYAAIwAAACcAAAArAAAALwA
+	AADMAAAA3AAAAAgAAAAABAAAQcZV9UPiVMsYAAAAAQIAAAIAAAAAAAAAHwIAAAAAAAAf
+	AgAAAAAAAAAAAAABBQAACAAAAAQDAAAEAAAAAAAAAAQAAAADAwAA9QEAAAgAAAABCQAA
+	ZmlsZTovLy8MAAAAAQEAAE1hY2ludG9zaCBIRAgAAAAEAwAAAACHETkAAAAIAAAAAAQA
+	AEHHOAXSgAAAJAAAAAEBAABFQTgxMUU0Ni00OTIxLTRBRTAtQUU0QS0zQ0VCREQzMkMz
+	QzkYAAAAAQIAAIEAAAABAAAA7xMAAAEAAADvEwAAAQAAAAEAAAABAQAALwAAADAAAAAB
+	AgAAZG5pYgAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcmRsZgIAAAAAAAAA
+	8AAAAP7///8BAAAAAAAAABMAAAAEEAAAbAAAAAAAAAAFEAAA7AAAAAAAAAAQEAAAHAEA
+	AAAAAABAEAAADAEAAAAAAAACIAAA8AEAAAAAAAAFIAAAYAEAAAAAAAAQIAAAcAEAAAAA
+	AAARIAAApAEAAAAAAAASIAAAhAEAAAAAAAATIAAAlAEAAAAAAAAgIAAA0AEAAAAAAAAw
+	IAAAPAEAAAAAAAABwAAARAEAAAAAAAARwAAAIAAAAAAAAAASwAAAVAEAAAAAAAAB0AAA
+	PAEAAAAAAAAQ0AAABAAAAAAAAAAX8AAAXAAAAAAAAAAi8AAA/AEAAAAAAAA=
 	</data>
 	<key>NSStatusItem Preferred Position Battery_battery</key>
-	<real>227</real>
+	<real>238</real>
 	<key>NSStatusItem Preferred Position CPU</key>
 	<real>455</real>
 	<key>NSStatusItem Preferred Position CPU_mini</key>
-	<real>453</real>
+	<real>465</real>
 	<key>NSStatusItem Preferred Position Clock</key>
 	<real>78</real>
 	<key>NSStatusItem Preferred Position Clock_sensors</key>
-	<real>78</real>
+	<real>86</real>
 	<key>NSStatusItem Preferred Position GPU_mini</key>
-	<real>500</real>
+	<real>512</real>
 	<key>NSStatusItem Preferred Position Network</key>
 	<real>380</real>
 	<key>NSStatusItem Preferred Position Network_speed</key>
-	<real>335</real>
+	<real>309</real>
 	<key>NSStatusItem Preferred Position RAM</key>
 	<real>506</real>
 	<key>NSStatusItem Preferred Position RAM_mini</key>
-	<real>406</real>
+	<real>418</real>
 	<key>NSToolbar Configuration eu.exelban.Stats.Settings.Toolbar</key>
 	<dict>
 		<key>TB Display Mode</key>
@@ -170,13 +170,17 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
-	<string>440 432 800 448 0 0 1680 1025 </string>
+	<string>440 428 800 448 0 0 1680 1019 </string>
 	<key>Network_downloadColor</key>
 	<string>secondGreen</string>
 	<key>Network_label_position</key>
-	<integer>1</integer>
+	<integer>2</integer>
 	<key>Network_networkChart_position</key>
-	<integer>3</integer>
+	<integer>4</integer>
+	<key>Network_notifications_connection_state</key>
+	<false/>
+	<key>Network_notifications_interface_state</key>
+	<false/>
 	<key>Network_position</key>
 	<integer>5</integer>
 	<key>Network_processes</key>
@@ -214,7 +218,9 @@
 	<key>Network_state</key>
 	<true/>
 	<key>Network_state_position</key>
-	<integer>2</integer>
+	<integer>3</integer>
+	<key>Network_text_position</key>
+	<integer>1</integer>
 	<key>Network_usageReset</key>
 	<string>Once per month</string>
 	<key>Network_widget</key>
@@ -257,17 +263,17 @@
 	<true/>
 	<key>setupProcess</key>
 	<true/>
+	<key>support_ts</key>
+	<integer>1755845776</integer>
 	<key>telemetry</key>
 	<false/>
-	<key>telemetry_id</key>
-	<string>100B5C40-66F8-48E4-92E7-6B0A20B980B7</string>
 	<key>temperature_units</key>
 	<string>system</string>
 	<key>update-interval</key>
 	<string>Once per month</string>
 	<key>updater_check_ts</key>
-	<integer>1727625716</integer>
+	<integer>1757138883</integer>
 	<key>version</key>
-	<string>2.11.13</string>
+	<string>2.11.52</string>
 </dict>
 </plist>

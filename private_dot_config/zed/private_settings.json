@@ -1,39 +1,48 @@
 {
+  "disable_ai": true,
+  "debugger": {
+    "button": false
+  },
+  "tab_bar": {
+    "show_nav_history_buttons": false
+  },
+  "git_panel": {
+    "dock": "right"
+  },
   "always_treat_brackets_as_autoclosed": true,
-  "assistant": {
-    "button": false,
-    "default_model": {
-      "model": "qwen2.5-coder:3b",
-      "provider": "ollama"
-    },
-    "version": "2"
+  "agent": {
+    "button": false
   },
   "auto_update": false,
-  "buffer_font_family": "MD IO 0.4",
+  "buffer_font_family": "MD IO",
   "buffer_font_size": 16.0,
-  "chat_panel": {
-    "button": "when_in_call"
-  },
   "collaboration_panel": {
     "button": false
   },
+  "diagnostics": {
+    "inline": {
+      "enabled": true
+    }
+  },
   "experimental.theme_overrides": {
-    "editor.wrap_guide": "#FFF2",
-    "tab.active_background": "#33A6"
+    "tab.active_background": "#33A6",
+    "editor.background": "#181818",
+    "editor.gutter.background": "#181818",
+    "terminal.background": "#181818",
+    "syntax": {
+      "operator": {
+        "color": "#C586C0"
+      }
+    }
   },
   "extend_comment_on_newline": false,
-  "features": {
-    "chat": false,
-    "copilot": false,
-    "notebooks": true
-  },
   "file_scan_exclusions": [
     "**/.DS_Store",
     "**/.git",
     "**/.venv",
     "**/__pycache__"
   ],
-  "font_fallbacks": ["JetBrainsMono Nerd Font"],
+  "buffer_font_fallbacks": ["JetBrainsMono Nerd Font"],
   "format_on_save": "on",
   "icon_theme": "Material Icon Theme",
   "indent_guides": {
@@ -45,11 +54,6 @@
   },
   "journal": {
     "hour_format": "hour24"
-  },
-  "language_models": {
-    "ollama": {
-      "api_url": "http://localhost:11434"
-    }
   },
   "languages": {
     "CSS": {
@@ -85,6 +89,14 @@
     }
   },
   "lsp": {
+    "cspell": {
+      "settings": {
+        "words": ["pyright", "venv"],
+        "language": "en",
+        "ignorePaths": [".venv/**", "*.lock", "node_modules/**"],
+        "allowCompoundWords": true
+      }
+    },
     "basedpyright": {
       "settings": {
         "basedpyright.analysis": {
@@ -113,11 +125,11 @@
     "metrics": false
   },
   "terminal": {
-    "font_fallbacks": ["JetBrainsMono Nerd Font"],
+    "font_fallbacks": ["MD IO 0.4", "JetBrainsMono Nerd Font"],
     "font_size": 14
   },
-  "theme": "ARV VSCode",
-  "ui_font_family": "Rec Mono Duotone",
-  "ui_font_size": 17,
+  "theme": "ARV VSCode - Italic",
+  "ui_font_family": "SF Mono Powerline",
+  "ui_font_size": 18,
   "wrap_guides": [80, 88, 100, 120]
 }
