@@ -1,0 +1,43 @@
+# Default: prints the list available commands
+@default:
+    echo "--- Global Justfile ---"
+    just -gl
+
+# Load environment variables from a .env file (unstable)
+[group("alias")]
+[no-exit-message]
+loadenv FILE=".env":
+    #!/usr/bin/env bash
+    if [ -f "{{ FILE }}" ]; then
+        echo "Loading environment variables from {{ FILE }}"
+        export $(grep -v '^#' {{ FILE }} | xargs)
+    else
+        echo "{{ FILE }} not exists"
+        exit 1
+    fi
+
+# Clean up Python artifacts like .pyc, __pycache__, .DS_Store, .ruff_cache
+[group("alias")]
+[group("py")]
+@pycls:
+    find . -maxdepth "5" \
+        -type d \( -name ".venv" -o -name ".git" \) -prune -o \
+        \( -name ".DS_Store" \
+          -o -name "__pycache__" \
+          -o -name ".ipynb_checkpoints" \
+          -o -name ".ruff_cache" \
+          -o -name "*.pyc" \) \
+        -exec rm -rfv {} +
+
+# Format Python code using Ruff
+[group("py")]
+[no-exit-message]
+format PATH=".":
+    ruff format {{ PATH }}
+
+# Lint and fix Python code using Ruff
+[group("py")]
+[no-exit-message]
+lint PATH=".":
+    ruff check {{ PATH }} --fix --unsafe-fixes
+    ruff check {{ PATH }} --isolated --select=F401 --fix

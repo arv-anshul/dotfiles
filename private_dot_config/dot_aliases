@@ -6,6 +6,7 @@ alias brs="brew services"
 alias cls="clear"
 alias dev="cd ~/Developer"
 alias flushdns="sudo killall -HUP mDNSResponder; dscacheutil -flushcache;"
+alias jg="just -g"
 alias lsa="ls -lahFG"
 alias py="python"
 alias zshs="source ~/.zshrc"
@@ -29,11 +30,6 @@ alias gc="git commit"
 alias gsw="git switch"
 
 # utilities
-function loadenv() {
-    local filePath="${1:-.env}"
-    [ -f "$filePath" ] && export $(grep -v '^#' "$filePath" | xargs)
-}
-
 function colormap() {
     range_start=${1:-1}
     range_end=${2:-255}
